@@ -1,0 +1,32 @@
+{
+  "IRIS OUT": {
+    "recording": true,
+    "editing": true,
+    "posting": true
+  },
+  "BOW AND ARROW": {
+    "recording": true,
+    "editing": false,
+    "posting": false
+  },
+  "AlwayS": {
+    "recording": true,
+    "editing": false,
+    "posting": false
+  },
+  "モニタリング": {
+    "recording": true,
+    "editing": false,
+    "posting": false
+  },
+  "WOW": {
+    "recording": true,
+    "editing": false,
+    "posting": false
+  },
+  "粛聖!!ロリ神レクイエム☆": {
+    "recording": true,
+    "editing": true,
+    "posting": true
+  }
+}

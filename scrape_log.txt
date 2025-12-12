@@ -1,0 +1,1661 @@
+============================================================
+YouTubeページからタイトルをスクレイピングします（API不要）
+============================================================
+
+読み込み: 499曲
+タイトルを取得中...
+
+[1/499] 弱虫モンブラン (euRzG6zmEb8)
+  ✓ タイトル: DECO*27 - 弱虫モンブラン (Reloaded) feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[2/499] GOOD DAY (TLJqi0IjMwo)
+  ✓ タイトル: Mrs. GREEN APPLE「GOOD DAY」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[3/499] はちゃめちゃわちゃライフ！ (FiTRogMY0Tc)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「はちゃめちゃわちゃライフ！」
+  ✓ アーティスト: FRUITS ZIPPER
+[4/499] SO BAD (d4st4aEjQ28)
+  ✓ タイトル: King Gnu - SO BAD
+  ✓ アーティスト: King Gnu
+[5/499] チェリーポップ feat. 初音ミク (BI9Ue6JwJic)
+  ✓ タイトル: DECO*27 - チェリーポップ feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[6/499] カリスマックス (mA9vq6Yi3Vk)
+  ✗ タイトル取得失敗
+[7/499] 織姫とBABY feat. 汐れいら (RyviHjvLIao)
+  ✓ タイトル: ねぐせ。「織姫とBABY feat. 汐れいら」Official Music Video
+  ✓ アーティスト: ねぐせ。
+[8/499] かわいいさがしてくれますか？ (4mPtFbzszCk)
+  - タイトル: 【MV】CUTIE STREET『かわいいさがしてくれますか？』
+  - アーティスト名を抽出できませんでした
+[9/499] IRIS OUT (LmZD-TU96q4)
+  ✓ タイトル: 米津玄師  Kenshi Yonezu - IRIS OUT
+  ✓ アーティスト: 米津玄師  Kenshi Yonezu
+[10/499] 恋風 (bWlknrhWjVw)
+  ✓ タイトル: 幾田りら「恋風」 Official Music Video
+  ✓ アーティスト: 幾田りら
+
+  休憩中... (10/499)
+
+[11/499] 超主人公 (thmR2SmkeDU)
+  ✓ タイトル: ピノキオピー - 超主人公 feat. 初音ミク / Super Superhero
+  ✓ アーティスト: ピノキオピー
+[12/499] アシンメトリー (5YI0KW4k6U8)
+  ✓ タイトル: なにわ男子 - アシンメトリー [Official Music Video YouTube ver.]
+  ✓ アーティスト: なにわ男子
+[13/499] プロポーズ (VDdLF1YubI0)
+  ✓ タイトル: natori - Propose
+  ✓ アーティスト: natori
+[14/499] 超特急逃走中 (d20dEAtbL08)
+  ✓ タイトル: ＝LOVE（イコールラブ）/ 18th Single c/w『超特急逃走中』【MV full】
+  ✓ アーティスト: MV full
+[15/499] Bring it on (8xZREULMjVM)
+  ✓ タイトル: ROF-MAO - Bring it on
+  ✓ アーティスト: ROF-MAO
+[16/499] Blue Jeans (9p15MdpVAO0)
+  - タイトル: Blue Jeans
+  - アーティスト名を抽出できませんでした
+[17/499] キミとルララ (UqfS7TaV7xo)
+  - タイトル: 「キミとアイドルプリキュア♪」後期エンディング主題歌「キミとルララ」(ノンテロップver)
+  - アーティスト名を抽出できませんでした
+[18/499] ノンフィクションズ (6Moq0q8R5Vw)
+  ✓ タイトル: Da-iCE /「ノンフィクションズ」Music Video
+  ✓ アーティスト: Da-iCE /
+[19/499] 夢中 (2N8NrYWbsw0)
+  ✓ タイトル: BE:FIRST / 夢中 -Live Mix-
+  ✓ アーティスト: BE:FIRST
+[20/499] StaRt (OTUtF7ZxRN8)
+  ✓ タイトル: Mrs. GREEN APPLE - StaRt
+  ✓ アーティスト: Mrs. GREEN APPLE
+
+  休憩中... (20/499)
+
+[21/499] WINNER！ゴジュウジャー！ (VaPUPgH1-zM)
+  ✓ タイトル: Wienners - WINNER！ゴジュウジャー！＜『ナンバーワン戦隊ゴジュウジャー』オープニング・テーマ＞ [Official Audio]
+  ✓ アーティスト: Wienners
+[22/499] STAR to STPR (AJeElzV6Bbo)
+  - タイトル: 【MV】STAR to STPR ／ STPR Creators
+  - アーティスト名を抽出できませんでした
+[23/499] こたえあわせ (yx1-9AHAFfQ)
+  - タイトル: Kotaeawase
+  - アーティスト名を抽出できませんでした
+[24/499] どきどきキュン！で大暴走♡ (9P3kxfons2E)
+  ✓ タイトル: 【MV】どきどきキュン!で大暴走♡ / いずれ菖蒲か杜若
+  ✓ アーティスト: どきどきキュン!で大暴走♡
+[25/499] T氏の話を信じるな (Jtm6ikBIl0g)
+  ✓ タイトル: ピノキオピー - T氏の話を信じるな feat. 初音ミク・重音テト / Don’t Believe in T
+  ✓ アーティスト: ピノキオピー
+[26/499] ギラギラサマー (LJOfZ-7FumQ)
+  ✓ タイトル: なにわ男子 - ギラギラサマー [Official Music Video]
+  ✓ アーティスト: なにわ男子
+[27/499] Carrying Happiness (YFk3oSwbXOY)
+  - タイトル: Carrying Happiness
+  - アーティスト名を抽出できませんでした
+[28/499] ハッピーラッキーチャッピー (s7FgdaGOw9s)
+  ✓ タイトル: ano「ハッピーラッキーチャッピー 」× アニメ『タコピーの原罪』Collaboration Music Video
+  ✓ アーティスト: ano
+[29/499] コドモオトナヒーロー (rTOraeetj9w)
+  - タイトル: 【MV】コドモオトナヒーロー/しなこ・竹ぱら・リアピ(原宿ヒーローズ)
+  - アーティスト名を抽出できませんでした
+[30/499] 明日の私に幸あれ (Z2icQoPrX9M)
+  ✓ タイトル: 明日の私に幸あれ / ナナヲアカリ
+  ✓ アーティスト: 明日の私に幸あれ
+
+  休憩中... (30/499)
+
+[31/499] 超最強 (Yeahpo-0Ub4)
+  ✓ タイトル: 超ときめき♡宣伝部 /「超最強」Music Video
+  ✓ アーティスト: 超ときめき♡宣伝部 /
+[32/499] お返事まだカナ？おじさん構文！ (8E8aWeY-pAc)
+  ✓ タイトル: お返事まだカナ💦❓おじさん構文😁❗️ / 雨衣
+  ✓ アーティスト: お返事まだカナ💦❓おじさん構文😁❗️
+[33/499] ダイダイダイダイダイキライ (klIxS5o65C4)
+  ✓ タイトル: ダイダイダイダイダイキライ - 初音ミク VS 重音テト  (Daidaidaidaidaikirai - HatsuneMiku VS KasaneTeto)
+  ✓ アーティスト: ダイダイダイダイダイキライ
+[34/499] breakfast (-zsYJTSw_V0)
+  ✓ タイトル: Mrs. GREEN APPLE「breakfast」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[35/499] テレパシ feat. 初音ミク (c56TpxfO9q0)
+  ✓ タイトル: DECO*27 - テレパシ feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[36/499] とくべチュ、して (F3P8vcZkIh4)
+  ✓ タイトル: ＝LOVE（イコールラブ）/ 18th Single『とくべチュ、して』【MV full】
+  ✓ アーティスト: MV full
+[37/499] 虹 (hkBbUf4oGfA)
+  - タイトル: 菅田将暉 『虹』
+  - アーティスト名を抽出できませんでした
+[38/499] おくすり (-qSqMSsJ4AE)
+  ✓ タイトル: おくすり / 『ユイカ』【MV】
+  ✓ アーティスト: おくすり
+[39/499] Trio Dreams (vcmMasgssFg)
+  - タイトル: Trio Dreams
+  - アーティスト名を抽出できませんでした
+[40/499] 愛♡スクリ～ム! (8Yy7Jzle338)
+  - タイトル: AiScReam『愛♡スクリ～ム！』Music Video
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (40/499)
+
+[41/499] Doki it (Oh7Sin6hTpc)
+  - タイトル: なにわ男子 – Doki it [Official Music Video]
+  - アーティスト名を抽出できませんでした
+[42/499] クスシキ (RCaTLn4qoz4)
+  ✓ タイトル: Mrs. GREEN APPLE「クスシキ」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[43/499] 倍倍FIGHT！ (9HKbo1FstOE)
+  ✓ タイトル: 【MV】CANDY TUNE「倍倍FIGHT!」
+  ✓ アーティスト: CANDY TUNE
+[44/499] キミとアイドルプリキュア♪ Light Up! (a2OEqn586AU)
+  - タイトル: キミとアイドルプリキュア♪ Light Up！
+  - アーティスト名を抽出できませんでした
+[45/499] 僕らしさ (cXaU8gAbCRY)
+  ✓ タイトル: 僕らしさ / 『ユイカ』【MV】
+  ✓ アーティスト: 僕らしさ
+[46/499] ブリキノダンス (iL7uoLCbJoc)
+  ✓ タイトル: 【Ado】ブリキノダンス 歌いました
+  ✓ アーティスト: Ado
+[47/499] Sad Song (LoyA7GvfOwA)
+  - タイトル: Sad Song
+  - アーティスト名を抽出できませんでした
+[48/499] イイじゃん (GW-XMhRQDFI)
+  ✓ タイトル: M!LK - イイじゃん(Official Music Video)
+  ✓ アーティスト: M!LK
+[49/499] かがみ (IU3AvcU4mjs)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「かがみ」
+  ✓ アーティスト: FRUITS ZIPPER
+[50/499] アイネクライネ (-EKxzId_Sj4)
+  ✓ タイトル: 米津玄師  - アイネクライネ , Kenshi Yonezu - Eine Kleine
+  ✓ アーティスト: 米津玄師
+
+  休憩中... (50/499)
+
+[51/499] インドア系ならトラックメイカー (114yuwqcQhM)
+  - タイトル: インドア系ならトラックメイカー
+  - アーティスト名を抽出できませんでした
+[52/499] ダンスロボットダンス (g7dvpD_zlIM)
+  ✓ タイトル: ナユタン星人 - ダンスロボットダンス (ft.初音ミク) OFFICIAL MUSIC VIDEO
+  ✓ アーティスト: ナユタン星人
+[53/499] NG (uyuVrzhRpnI)
+  - タイトル: I FINALLY WON the GRAND JACKPOT!!!!
+  - アーティスト名を抽出できませんでした
+[54/499] 雨トキメキ恋模様 (td0eO78wxSI)
+  ✓ タイトル: 【MV】雨トキメキ恋模様 / いろはにほへっと あやふぶみ
+  ✓ アーティスト: 雨トキメキ恋模様
+[55/499] GOAT (n26QbDJxkzM)
+  ✓ タイトル: G.O.A.T - Official Teaser | Sudheer Anand, Divya Bharathi | Leon James | Mogulla Chandrashekar
+  ✓ アーティスト: G.O.A.T
+[56/499] イルミネーション (tFc6y7Dk66E)
+  ✓ タイトル: B&#39;z / イルミネーション
+  ✓ アーティスト: B&#39;z
+[57/499] 長く短い祭 (3LVAmMxICoA)
+  ✓ タイトル: 椎名林檎 - 長く短い祭
+  ✓ アーティスト: 椎名林檎
+[58/499] 気まぐれロマンティック (5XCSt_0lwOE)
+  - タイトル: いきものがかり 『気まぐれロマンティック』Music Video
+  - アーティスト名を抽出できませんでした
+[59/499] ラストノート (s5nnCiI78FI)
+  ✓ タイトル: Omoinotake | ラストノート 【Official Music Video】
+  ✓ アーティスト: Official Music Video
+[60/499] 桜日和とタイムマシン with 初音ミク (nIWZfhpnq6M)
+  ✓ タイトル: 【Ado】 桜日和とタイムマシン with 初音ミク
+  ✓ アーティスト: Ado
+
+  休憩中... (60/499)
+
+[61/499] ダーリン (L262NKlSl4s)
+  ✓ タイトル: Mrs. GREEN APPLE「ダーリン」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[62/499] えびぞりターン! (lhjSMaV18Is)
+  - タイトル: 【MV】フォーエイト48 – えびぞりターン！（Official Music Video）
+  - アーティスト名を抽出できませんでした
+[63/499] PEACE (N5doTwG9ovA)
+  - タイトル: 【MV】PEACE ／ STPR Creators
+  - アーティスト名を抽出できませんでした
+[64/499] AlwayS (YZdyIgst-S4)
+  ✓ タイトル: Isak Danielson - Always (official video)
+  ✓ アーティスト: Isak Danielson
+[65/499] アポリア (fhTFysCtF6g)
+  ✓ タイトル: ヨルシカ - アポリア（OFFICIAL VIDEO）
+  ✓ アーティスト: ヨルシカ
+[66/499] プレゼント (2JEM71-lBc4)
+  - タイトル: マルシィ – プレゼント（Official Music Video）
+  - アーティスト名を抽出できませんでした
+[67/499] うわーーー！！！！！！ (XXXvtvj0MfQ)
+  - タイトル: 【MV】うわーーー！！！！！！／AMPTAKxCOLORS【アンプタック】
+  - アーティスト名を抽出できませんでした
+[68/499] 百花繚乱 (3Fz17pPuI4k)
+  ✓ タイトル: 幾田りら「百花繚乱」 Official Music Video
+  ✓ アーティスト: 幾田りら
+[69/499] こっち向いてほい (JYgWfE10Pt0)
+  - タイトル: こっち向いてほい - asmi (Official Music Video)
+  - アーティスト名を抽出できませんでした
+[70/499] PLAZMA (fp3F6TqBsAU)
+  ✓ タイトル: 米津玄師  Kenshi Yonezu - Plazma
+  ✓ アーティスト: 米津玄師  Kenshi Yonezu
+
+  休憩中... (70/499)
+
+[71/499] GO!GO!細胞フェスタ (spGg6e2GUR4)
+  - タイトル: GO!GO!細胞フェスタ
+  - アーティスト名を抽出できませんでした
+[72/499] DOWN TOWN SWING (hjtYICw0PFA)
+  - タイトル: 【MV】DOWN TOWN SWING ／AMPTAKxCOLORS【アンプタック】
+  - アーティスト名を抽出できませんでした
+[73/499] 走れSAKAMOTO (jbgG5tzgP9k)
+  ✓ タイトル: 走れSAKAMOTO / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: 走れSAKAMOTO
+[74/499] のだ (vY8iwpN3GXQ)
+  ✓ タイトル: のだ / ずんだもん・初音ミク・重音テト
+  ✓ アーティスト: のだ
+[75/499] ピッカーン! (iKuLBnTU1dE)
+  ✓ タイトル: 【公式】アニメ「ポケットモンスター レックウザ ライジング」エンディングテーマ「ピッカーン！」
+  ✓ アーティスト: アニメ
+[76/499] 馬鹿の一つ覚え (oowSgjv49vk)
+  ✓ タイトル: 緑黄色社会『馬鹿の一つ覚え』Official Video / Ryokuoushoku Shakai – Bakano Hitotsuoboe
+  ✓ アーティスト: 緑黄色社会『馬鹿の一つ覚え』Official Video
+[77/499] ひたむきシンデレラ！ (AtDErGSpfYQ)
+  ✓ タイトル: 【MV】CUTIE STREET「ひたむきシンデレラ！」
+  ✓ アーティスト: CUTIE STREET
+[78/499] へんしん！ (1XZ_t2xtWMk)
+  - タイトル: 【MV】へんしん!／莉犬【村井の恋OP】
+  - アーティスト名を抽出できませんでした
+[79/499] TAIDADA (IeyCdm9WwXM)
+  ✓ タイトル: ずっと真夜中でいいのに。『TAIDADA』MV (ZUTOMAYO - TAIDADA)【ダンダダン MAD】
+  ✓ アーティスト: ずっと真夜中でいいのに。『TAIDADA』MV (ZUTOMAYO
+[80/499] BOW AND ARROW (M-Eyhjkepy0)
+  ✓ タイトル: 米津玄師 Kenshi Yonezu - BOW AND ARROW
+  ✓ アーティスト: 米津玄師 Kenshi Yonezu
+
+  休憩中... (80/499)
+
+[81/499] 50％ (Vv2n31gL85I)
+  ✓ タイトル: Official髭男dism - 50% [Official Video]
+  ✓ アーティスト: Official髭男dism
+[82/499] マシュマロパンチ (sd4LIb8pm8s)
+  ✓ タイトル: 【MV】 マシュマロパンチ‪👊🏻💗 / しなこfeat. 午前0時のプリンセス / あぃりDX
+  ✓ アーティスト: マシュマロパンチ‪👊🏻💗
+[83/499] 僕らはいきものだから (h5uP8eqKah8)
+  ✓ タイトル: 緑黄色社会『僕らはいきものだから』Official Video / Ryokuoushoku Shakai – Bokurawa Ikimonodakara
+  ✓ アーティスト: 緑黄色社会『僕らはいきものだから』Official Video
+[84/499] AWAKE (UYEZL13MUFk)
+  ✓ タイトル: AWAKE / 星街すいせい(official)
+  ✓ アーティスト: AWAKE
+[85/499] 風神 (yiU0I0tvt6s)
+  ✓ タイトル: 風神 / Vaundy (TBS系金曜ドラマ『ライオンの隠れ家』主題歌) / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: 風神
+[86/499] New me (HRlW6yZo6Kc)
+  ✓ タイトル: YOASOBI「New me」Official Music Video
+  ✓ アーティスト: YOASOBI
+[87/499] ビターバカンス (-6YeAmmRdoA)
+  ✓ タイトル: Mrs. GREEN APPLE「ビターバカンス」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[88/499] WOW (393C3pr2ioY)
+  ✓ タイトル: Post Malone - &quot;Wow.&quot; (Official Music Video)
+  ✓ アーティスト: Post Malone
+[89/499] トワイライト (qIcIpSyHcyM)
+  ✓ タイトル: King Gnu - TWILIGHT!!!
+  ✓ アーティスト: King Gnu
+[90/499] ねっこ (jz8O2t2r8Gs)
+  ✓ タイトル: King Gnu - ねっこ
+  ✓ アーティスト: King Gnu
+
+  休憩中... (90/499)
+
+[91/499] Got Boost？ (auKBDWu9eAA)
+  ✓ タイトル: 【Music Video】Got Boost？(Artist Only Ver.) / FANTASTICS
+  ✓ アーティスト: Got Boost？(Artist Only Ver.)
+[92/499] こんなあたしはいかがですか (9x-EEsp9MwI)
+  ✓ タイトル: 超ときめき♡宣伝部 / 「こんなあたしはいかがですか」Music Video
+  ✓ アーティスト: 超ときめき♡宣伝部 /
+[93/499] 朝、月面も笑っている (LFG_iqpGMss)
+  ✓ タイトル: DISH// - 朝、月面も笑っている [Official Video]｜フジテレビ系「めざましテレビ」テーマソング
+  ✓ アーティスト: DISH//
+[94/499] ロミオとシンデレラ (9HrOqmiEsN8)
+  ✓ タイトル: ロミオとシンデレラ  - doriko feat.初音ミク【official MV】
+  ✓ アーティスト: ロミオとシンデレラ
+[95/499] 一旦ステイ TONIGHT (xbHcDKJ1vpA)
+  ✓ タイトル: 【MV】一旦ステイ TONIGHT / 不破湊
+  ✓ アーティスト: 一旦ステイ TONIGHT
+[96/499] CHANGE (z2ed0Tazw0E)
+  - タイトル: ONE OK ROCK: Change [OFFICIAL VIDEO]
+  - アーティスト名を抽出できませんでした
+[97/499] 我ら完全無敵のアイドル!! (s9-RcVcxeAQ)
+  ✓ タイトル: B小町「我ら完全無敵のアイドル!!」ライブパフォーマンス映像
+  ✓ アーティスト: B小町
+[98/499] もういいよ (svbfMJJk_90)
+  ✓ タイトル: もういいよ / こっちのけんと MV
+  ✓ アーティスト: もういいよ
+[99/499] Same Blue (A7cp6OVa0Qc)
+  ✓ タイトル: Official髭男dism - Same Blue [Official Video]
+  ✓ アーティスト: Official髭男dism
+[100/499] パイパイ仮面でどうかしらん？ (hv2vo94FOF4)
+  ✓ タイトル: 【original anime MV】パイパイ仮面でどうかしらん？【hololive/宝鐘マリン】
+  ✓ アーティスト: original anime MV
+
+  休憩中... (100/499)
+
+[101/499] ドーナツホール (y7fu_nNQAEQ)
+  ✓ タイトル: ハチ - ドーナツホール 2024 , HACHI - DONUT HOLE 2024
+  ✓ アーティスト: ハチ
+[102/499] 月曜日戦争 (kh3H0M9bKo8)
+  ✓ タイトル: 吉澤嘉代子「月曜日戦争」MUSIC VIDEO
+  ✓ アーティスト: 吉澤嘉代子
+[103/499] モニタリング (kbNdx0yqbZE)
+  ✓ タイトル: DECO*27 - モニタリング feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[104/499] HAPPY≒FUTURE (Z4UX7UMU1LU)
+  - タイトル: Happy≒Future
+  - アーティスト名を抽出できませんでした
+[105/499] Only One Story (EFOv-sfboB4)
+  - タイトル: Only One Story (Korean ver.)
+  - アーティスト名を抽出できませんでした
+[106/499] ネバーランド (48Csilkjev0)
+  ✓ タイトル: DECO*27 - ネバーランド feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[107/499] 恋うらら (7sYWi7_gBsI)
+  - タイトル: 【MV】恋うらら／AMPTAKxCOLORS【アンプタック】
+  - アーティスト名を抽出できませんでした
+[108/499] チャンカパーナ (Ou1UG_PC43Q)
+  - タイトル: NEWS – チャンカパーナ [Official Music Video]
+  - アーティスト名を抽出できませんでした
+[109/499] 歯ラ歯ラ (GTnMIACX6TM)
+  - タイトル: 【MV】歯ラ歯ラ🦷🪥✨
+  - アーティスト名を抽出できませんでした
+[110/499] ハッピーウェディング前ソング (lVIHyj9qVy0)
+  ✓ タイトル: ヤバイTシャツ屋さん - 「ハッピーウェディング前ソング」Music Video
+  ✓ アーティスト: ヤバイTシャツ屋さん
+
+  休憩中... (110/499)
+
+[111/499] モノトーン (sJ-2X3rHtXw)
+  ✓ タイトル: YOASOBI「モノトーン」Official Music Video
+  ✓ アーティスト: YOASOBI
+[112/499] 許婚っきゅん (kcdSjvUBrDA)
+  ✓ タイトル: ano「許婚っきゅん」Music Video
+  ✓ アーティスト: ano
+[113/499] テトリス (Soy4jGPHr3g)
+  ✓ タイトル: テトリス / 重音テトSV
+  ✓ アーティスト: テトリス
+[114/499] 死ぬまでダーリン (1GguL5dZd3M)
+  - タイトル: 死ぬまでダーリン feat. 望月あかり（CV：阿澄佳奈）／HoneyWorks
+  - アーティスト名を抽出できませんでした
+[115/499] すないぱー。 (nvQN56D8RYo)
+  ✓ タイトル: すないぱー。 / 『ユイカ』【MV】
+  ✓ アーティスト: すないぱー。
+[116/499] 幽霊船戦 (QfGuQELt1Tk)
+  ✓ タイトル: 【original anime MV】幽霊船戦【hololive/宝鐘マリン】
+  ✓ アーティスト: original anime MV
+[117/499] ぶんぶぶんぶぶん (1DaaXdx37So)
+  - タイトル: 【MV】ぶんぶぶんぶぶん／AMPTAKxCOLORS【アンプタック】
+  - アーティスト名を抽出できませんでした
+[118/499] WATCH ME (evtoG-4dLM4)
+  ✓ タイトル: YOASOBI「Watch me!」Official Music Video
+  ✓ アーティスト: YOASOBI
+[119/499] 六等星 (5Y-2neQjQLw)
+  - タイトル: 六等星
+  - アーティスト名を抽出できませんでした
+[120/499] ㋰責任集合体 (c5_0NPftdlY)
+  - タイトル: ㋰責任集合体／重音テトSV
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (120/499)
+
+[121/499] とーちゃんの足ってなんでクサイの？ (OvLHBXodc78)
+  - タイトル: 【MV】とーちゃんの足ってなんでクサイの？feat.しんのすけ＆ひろし/竹下☆ぱらだいす
+  - アーティスト名を抽出できませんでした
+[122/499] ミッション!健・康・第・イチ (oUvD1aGDycM)
+  - タイトル: ミッション！ 健・康・第・イチ
+  - アーティスト名を抽出できませんでした
+[123/499] きゅるりんしてみて (9g3dRd_QuVY)
+  - タイトル: 「Special♡Spell」ジャムムコラボMV/きゅるりんってしてみて
+  - アーティスト名を抽出できませんでした
+[124/499] はりーはりーらぶ (6gdbrAFwGCk)
+  - タイトル: 【MV】はりーはりーらぶっ／すとぷり
+  - アーティスト名を抽出できませんでした
+[125/499] 許婚っきゅん (kcdSjvUBrDA)
+  ✓ タイトル: ano「許婚っきゅん」Music Video
+  ✓ アーティスト: ano
+[126/499] EDEN (kCnD_dMyJ3M)
+  - タイトル: The Bible of The “Eden”
+  - アーティスト名を抽出できませんでした
+[127/499] らぶきゅん♡うぉんてっど (28HBkyA56Cw)
+  - タイトル: 「らぶきゅん♡うぉんてっど」MV/きゅるりんってしてみて
+  - アーティスト名を抽出できませんでした
+[128/499] オトノケ (tRwHpyOq4P4)
+  ✓ タイトル: Creepy Nuts - オトノケ(Otonoke) 【Official MV】 [Dandadan OP]
+  ✓ アーティスト: Creepy Nuts
+[129/499] ＃あくあ色ぱれっと (6bnaBnd4kyU)
+  ✓ タイトル: 【original】#あくあ色ぱれっと【ホロライブ/湊あくあ】
+  ✓ アーティスト: original
+[130/499] おかえり (0ZsP6MVjFIo)
+  ✓ タイトル: おかえり - Tani Yuuki【MV】
+  ✓ アーティスト: おかえり
+
+  休憩中... (130/499)
+
+[131/499] 誰我為 (AbY-IVN4WcE)
+  ✓ タイトル: TK from 凛として時雨 『誰我為』 Music Video（TVアニメ「僕のヒーローアカデミア」7期オープニング主題歌）
+  ✓ アーティスト: TK from 凛として時雨 『誰我為』 Music Video（TVアニメ
+[132/499] Let me battle (Pq3RedHvV-A)
+  ✓ タイトル: 【公式】アニメ「ポケットモンスター　テラスタルデビュー」エンディングテーマ「Let me battle」
+  ✓ アーティスト: アニメ
+[133/499] 怪獣 (a8dgNdJVluc)
+  ✓ タイトル: サカナクション / 怪獣　-Music Video-
+  ✓ アーティスト: サカナクション
+[134/499] メロドラマ (Ao29RaMxH98)
+  ✓ タイトル: natori &amp; imase - Melodrama
+  ✓ アーティスト: natori &amp; imase
+[135/499] フルーツバスケット (bRRPqGRguKo)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「フルーツバスケット」
+  ✓ アーティスト: FRUITS ZIPPER
+[136/499] 山田PERFECT (zGMftuCqLhk)
+  ✓ タイトル: 山田PERFECT / jon-YAKITORY, 初音ミク -YAMADA PERFECT / jon-YAKITORY, Hatsune Miku-
+  ✓ アーティスト: 山田PERFECT
+[137/499] ひゅるりらぱっぱ (AOfaWrBwo7I)
+  - タイトル: tuki.『ひゅるりらぱっぱ』Official Music Video
+  - アーティスト名を抽出できませんでした
+[138/499] 恋する惑星「アナタ」 (RM1kn_U4Vt0)
+  ✓ タイトル: 冨岡 愛 - 恋する惑星「アナタ」 (Music Video)
+  ✓ アーティスト: 冨岡 愛
+[139/499] きらり (TcLLpZBWsck)
+  ✓ タイトル: Fujii Kaze - Kirari (Official Video)
+  ✓ アーティスト: Fujii Kaze
+[140/499] familie (FYhxYcXfhYA)
+  ✓ タイトル: Mrs. GREEN APPLE「familie」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+
+  休憩中... (140/499)
+
+[141/499] POP IN 2 (QgxYScXawEE)
+  - タイトル: POP IN 2
+  - アーティスト名を抽出できませんでした
+[142/499] FIRST 1MPACT (tT3grNOdB8g)
+  ✓ タイトル: 【初オリジナル曲】FIRST 1MPACT / めておら【STPR新人歌い手グループ】【Meteorites】
+  ✓ アーティスト: FIRST 1MPACT
+[143/499] プランA (l1HeItO98FI)
+  ✓ タイトル: DISH// - プランA [Official Video]｜TVアニメ「逃げ上手の若君」 オープニングテーマ
+  ✓ アーティスト: DISH// - プランA [Official Video]｜TVアニメ
+[144/499] だんご3兄弟 (xTwgS1V_8zQ)
+  - タイトル: だんご３兄弟（おかあさんといっしょ）　歌：NEUTRINO（歌詞付き）
+  - アーティスト名を抽出できませんでした
+[145/499] Jewelry(Prod. imase) (Raf9odbiu8g)
+  - タイトル: LE SSERAFIM (르세라핌) &#39;Jewelry (Prod. imase)&#39; LIVE CLIP
+  - アーティスト名を抽出できませんでした
+[146/499] 有頂天猫 (HHjQe9DYwN0)
+  ✓ タイトル: キヨ 「有頂天猫」 Music Video
+  ✓ アーティスト: キヨ
+[147/499] からだ☆ダンダン (9rNtzlwzWhw)
+  - タイトル: 「からだ☆ダンダン」♪スペステ2023から
+  - アーティスト名を抽出できませんでした
+[148/499] モエチャッカファイア (wZlv3qDPfjk)
+  ✓ タイトル: モエチャッカファイア / 弌誠：MUSIC VIDEO
+  ✓ アーティスト: モエチャッカファイア
+[149/499] 元彼女のみなさまへ (B36u-tuublE)
+  ✓ タイトル: コレサワ「元彼女のみなさまへ」【Lyric Video】
+  ✓ アーティスト: コレサワ
+[150/499] INZM (QmaNuj4n9Ec)
+  ✓ タイトル: Number_i - INZM (Official Music Video)
+  ✓ アーティスト: Number_i
+
+  休憩中... (150/499)
+
+[151/499] きんらきらぽん (VodLbh7S734)
+  - タイトル: きんらきらぽん（新エンディング）NHK Eテレおかあさんといっしょ
+  - アーティスト名を抽出できませんでした
+[152/499] ぴゅあぴゅあいちご (-FHrSNYCAcM)
+  - タイトル: 【MV】ぴゅあぴゅあいちご／すとぷり【HoneyWorks】
+  - アーティスト名を抽出できませんでした
+[153/499] 派手髪でも出来るばい！ (BEiDuHEc76I)
+  - タイトル: 【MV】派手髪でも出来るばい！/竹下☆ぱらだいす
+  - アーティスト名を抽出できませんでした
+[154/499] 恥ずかしいか青春は (G9KznOYqyOg)
+  - タイトル: 緑黄色社会『恥ずかしいか青春は』Official Video / Ryokuoushoku Shakai – Hazukashiika Seishunwa
+  - アーティスト名を抽出できませんでした
+[155/499] アポロドロス (dOR5-Y80CUA)
+  ✓ タイトル: Mrs. GREEN APPLE「アポロドロス」Official Lyric Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[156/499] かわいいだけじゃだめですか？ (jZqTz1G8G04)
+  ✓ タイトル: 【MV】CUTIE STREET「かわいいだけじゃだめですか？」
+  ✓ アーティスト: CUTIE STREET
+[157/499] UNDEAD (Jj1_mfUzjOs)
+  ✓ タイトル: YOASOBI「UNDEAD」 Official Music Video／『〈物語〉シリーズ オフ&amp;モンスターシーズン』主題歌
+  ✓ アーティスト: YOASOBI
+[158/499] コイスルヒカリ (Za9xAlR6-W8)
+  ✓ タイトル: なにわ男子 - コイスルヒカリ [Official Music Video]
+  ✓ アーティスト: なにわ男子
+[159/499] D.N.A. (RyRfLSOewbU)
+  ✓ タイトル: D/N/A / 25時、ナイトコードで。 × 鏡音リン
+  ✓ アーティスト: D/N/A
+[160/499] 愛とU (NY1TyFUhbMA)
+  ✓ タイトル: Mega Shinnosuke - 愛とU(Official Music Video)
+  ✓ アーティスト: Mega Shinnosuke
+
+  休憩中... (160/499)
+
+[161/499] ホムンクルス (ZhUa0CumyxQ)
+  ✓ タイトル: ホムンクルス (『僕のヒーローアカデミア THE MOVIE ユアネクスト』主題歌) / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: ホムンクルス (『僕のヒーローアカデミア THE MOVIE ユアネクスト』主題歌)
+[162/499] 愛包ダンスホール (bnofYmfKLeo)
+  - タイトル: HIMEHINA『愛包ダンスホール』MV
+  - アーティスト名を抽出できませんでした
+[163/499] ぴゅあいんざわーるど (Mp7jBQmxEGM)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「ぴゅあいんざわーるど」
+  ✓ アーティスト: FRUITS ZIPPER
+[164/499] 生まれたその時から (hdWov4QwjzM)
+  - タイトル: 生まれたその時から
+  - アーティスト名を抽出できませんでした
+[165/499] カーテンコール (gpdh9AUzQjY)
+  - タイトル: カーテンコール
+  - アーティスト名を抽出できませんでした
+[166/499] INZM (QmaNuj4n9Ec)
+  ✓ タイトル: Number_i - INZM (Official Music Video)
+  ✓ アーティスト: Number_i
+[167/499] 虹のはじまり (bJvIcIVsgks)
+  - タイトル: 【MV】虹のはじまり／すとぷり【HoneyWorks】
+  - アーティスト名を抽出できませんでした
+[168/499] グミキュンプリンセス (WkF5xQ_7XRQ)
+  - タイトル: グミキュンプリンセス
+  - アーティスト名を抽出できませんでした
+[169/499] 転生林檎 feat. 初音ミク (LYWP8HtgeLQ)
+  ✓ タイトル: ピノキオピー - 転生林檎 feat. 初音ミク / Reincarnation Apple
+  ✓ アーティスト: ピノキオピー
+[170/499] 今はいいんだよ。 (PgCc3OMrS8c)
+  ✓ タイトル: 今はいいんだよ。 / MIMI【Covered by Kotoha】
+  ✓ アーティスト: 今はいいんだよ。
+
+  休憩中... (170/499)
+
+[171/499] ルル (0Z_YqhYHhpg)
+  ✓ タイトル: 【Ado】ルル (RuLe)
+  ✓ アーティスト: Ado
+[172/499] ギンギラ銀河 (H_rd_qjk6sI)
+  ✓ タイトル: 【妖怪ウォッチOP】ギンギラ銀河／すとぷり【ナユタン星人】
+  ✓ アーティスト: 妖怪ウォッチOP
+[173/499] ultra soul (ygyOtMnNvCg)
+  - タイトル: B’z Live from AVACO STUDIO “ultra soul”
+  - アーティスト名を抽出できませんでした
+[174/499] ヨワネハキ (wUHBqw7N_Z4)
+  ✓ タイトル: 【102】[feat. 和ぬか, asmi] ヨワネハキ  / MAISONdes
+  ✓ アーティスト: [feat. 和ぬか, asmi] ヨワネハキ
+[175/499] 次回予告 (O3ZYjfMqAsc)
+  ✓ タイトル: 次回予告 / キタニタツヤ - Preview of Me / Tatsuya Kitani
+  ✓ アーティスト: 次回予告 / キタニタツヤ
+[176/499] MONSTER DANCE (N39glrfql0I)
+  ✓ タイトル: KEYTALK/「MONSTER DANCE」MUSIC VIDEO
+  ✓ アーティスト: KEYTALK/
+[177/499] エジソン (8tOIjOPZ5sA)
+  - タイトル: 水曜日のカンパネラ『エジソン』
+  - アーティスト名を抽出できませんでした
+[178/499] 拝啓、俺たちへ (Pyum09A4-SQ)
+  ✓ タイトル: コムドット「拝啓、俺たちへ」Official Music Video
+  ✓ アーティスト: コムドット
+[179/499] ドラマツルギー (jJzw1h5CR-I)
+  ✓ タイトル: ドラマツルギー - Eve  MV
+  ✓ アーティスト: ドラマツルギー
+[180/499] しあわせえぼりゅ～しょん♡ (DRi7GdbkOBI)
+  - タイトル: しあわせえぼりゅ～しょん♡ ～こむぎ＆いろはVer.～
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (180/499)
+
+[181/499] LOSER (Dx_fKPBPYUI)
+  ✓ タイトル: 米津玄師 - LOSER , Kenshi Yonezu
+  ✓ アーティスト: 米津玄師
+[182/499] かくれんぼ (oi8ArKYLwBY)
+  ✓ タイトル: AliA / かくれんぼ【Official Music Video】
+  ✓ アーティスト: AliA
+[183/499] Steal a Kiss (1maL_bJe5u8)
+  ✓ タイトル: 超特急「Steal a Kiss」MUSIC VIDEO
+  ✓ アーティスト: 超特急
+[184/499] Alpha (Olr7YwLu3kQ)
+  ✓ タイトル: なにわ男子 - Alpha [Official Music Video]
+  ✓ アーティスト: なにわ男子
+[185/499] キス・ミー・パティシエ (HFC-Zrfsab4)
+  - タイトル: キス・ミー・パティシエ
+  - アーティスト名を抽出できませんでした
+[186/499] 「名探偵コナン」メイン・テーマ (1XWe2MBaLRI)
+  ✓ タイトル: コナンBGM No 1　「名探偵コナン　メイン･テーマ」
+  ✓ アーティスト: コナンBGM No 1
+[187/499] BON (0kKd6fVPayU)
+  ✓ タイトル: Number_i - BON (Official Music Video)
+  ✓ アーティスト: Number_i
+[188/499] おやすみロマンス (kRC6jAgrT2I)
+  ✓ タイトル: おやすみロマンス / むくえな（Official Music Video）
+  ✓ アーティスト: おやすみロマンス
+[189/499] BREAKOUT (LBaeKssNPuE)
+  ✓ タイトル: Snow Man「BREAKOUT」Dance Practice
+  ✓ アーティスト: Snow Man
+[190/499] 誓いの花束を～With You～ (-LZJKbYIiCo)
+  - タイトル: 【MV】誓いの花束を～With You～／すとぷり【HoneyWorks】
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (190/499)
+
+[191/499] 雨天決行 (_jGlfq85PJA)
+  - タイトル: 【MV】雨天決行／すとぷり
+  - アーティスト名を抽出できませんでした
+[192/499] さよーならまたいつか! (-wb2PAx6aEs)
+  ✓ タイトル: 米津玄師 - さよーならまたいつか！ Kenshi Yonezu - Sayonara, Mata Itsuka !
+  ✓ アーティスト: 米津玄師
+[193/499] この地球のどこかで (rzym4THJtcI)
+  ✓ タイトル: 【合唱】この地球のどこかで (歌詞付き)
+  ✓ アーティスト: 合唱
+[194/499] Dear (cNP21cprtbk)
+  ✓ タイトル: Mrs. GREEN APPLE「Dear」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[195/499] ファタール (8tQiWHXSGN0)
+  ✓ タイトル: ファタール / GEMN - Fatal / GEMN
+  ✓ アーティスト: ファタール / GEMN
+[196/499] MOTTAI (X96zX6Ahfko)
+  - タイトル: 【MV】MOTTAI／P丸様。
+  - アーティスト名を抽出できませんでした
+[197/499] マツケンサンバII (XazyhnymUQo)
+  ✓ タイトル: 【公式】松平健「マツケンサンバⅡ」 MV
+  ✓ アーティスト: 松平健
+[198/499] コツコツ-PON-PON (irB0C3g_NyQ)
+  - タイトル: コツコツ-PON-PON
+  - アーティスト名を抽出できませんでした
+[199/499] 晴る (CkvWJNt77mU)
+  ✓ タイトル: ヨルシカ - 晴る（OFFICIAL VIDEO）
+  ✓ アーティスト: ヨルシカ
+[200/499] 夢幻 (1a3b7ZpUcn4)
+  - タイトル: MY FIRST STORY × HYDE – “MUGEN” (from Anime “Demon Slayer: Kimetsu no Yaiba”) Official Music Video
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (200/499)
+
+[201/499] しなこワールド (t9aH2sZJpP8)
+  ✓ タイトル: 【MV】しなこワールド🌷💜 /  あぃりDX・しなこ
+  ✓ アーティスト: しなこワールド🌷💜
+[202/499] ドンスカパンパンおうえんだん (BroJdJsFC6Y)
+  ✓ タイトル: ♪ドンスカパンパンおうえんだん〈振り付き〉ドンスカドン　ドンスカドン　ドンスカドンスカ　ドンドンドン～♪【おかあさんといっしょ・おかいつ】
+  ✓ アーティスト: おかあさんといっしょ・おかいつ
+[203/499] NEW CLASSIC (phUU47nxgKY)
+  ✓ タイトル: Selena Gomez, Drew Seeley - New Classic
+  ✓ アーティスト: Selena Gomez, Drew Seeley
+[204/499] サクラキミワタシ (rpVvPAFaoqM)
+  - タイトル: tuki.『サクラキミワタシ』Official Music Video
+  - アーティスト名を抽出できませんでした
+[205/499] シカ色デイズ (fxPcJTU-A8U)
+  - タイトル: シカ色デイズ
+  - アーティスト名を抽出できませんでした
+[206/499] ハム太郎とっとこうた (Lg96zmH7D7w)
+  ✓ タイトル: 【アニメ】「ハム太郎とっとこうた」　（歌：ハムちゃんず）【公式】とっとこハム太郎のオープニングテーマ曲　その１
+  ✓ アーティスト: アニメ
+[207/499] 魔性の女A (d0QFalAKRNM)
+  ✓ タイトル: 紫 今 - 魔性の女A / Mulasaki Ima - femme fatale A (MUSIC VIDEO)
+  ✓ アーティスト: 紫 今 - 魔性の女A / Mulasaki Ima
+[208/499] 好きな惣菜発表ドラゴン (OnCFEo_pXaY)
+  ✓ タイトル: 好きな惣菜発表ドラゴン / 重音テト
+  ✓ アーティスト: 好きな惣菜発表ドラゴン
+[209/499] STARBOYS (plnfIj7dkJE)
+  - タイトル: Starboy
+  - アーティスト名を抽出できませんでした
+[210/499] アンノウン・マザーグース (P_CSdxSGfaA)
+  ✓ タイトル: wowaka 『アンノウン・マザーグース』feat. 初音ミク / wowaka - Unknown Mother-Goose (Official Video) ft. Hatsune Miku
+  ✓ アーティスト: wowaka 『アンノウン・マザーグース』feat. 初音ミク / wowaka
+
+  休憩中... (210/499)
+
+[211/499] はいよろこんで (jzi6RNVEOtA)
+  ✓ タイトル: はいよろこんで / こっちのけんと MV
+  ✓ アーティスト: はいよろこんで
+[212/499] 絶対アイドル辞めないで (17NBPoc78oM)
+  ✓ タイトル: ＝LOVE（イコールラブ）/ 17th Single『絶対アイドル辞めないで』【MV full】
+  ✓ アーティスト: MV full
+[213/499] 夏色 (hhDzDL9Y2Lo)
+  - タイトル: ゆず『夏色』MUSIC VIDEO
+  - アーティスト名を抽出できませんでした
+[214/499] にじのむこうに (N1DZ0GCgIhA)
+  - タイトル: にじのむこうに（おかあさんといっしょ）／坂田おさむ＆坂田めぐみ
+  - アーティスト名を抽出できませんでした
+[215/499] 全力キング (e1cdEpR8OIs)
+  - タイトル: 全力キング
+  - アーティスト名を抽出できませんでした
+[216/499] メズマライザー (19y8YTbvri8)
+  ✓ タイトル: メズマライザー / 初音ミク・重音テトSV
+  ✓ アーティスト: メズマライザー
+[217/499] 恋の約束 (37Ygo1fj43A)
+  ✓ タイトル: 【MV】恋の約束 -2025 ver.- / いれいす
+  ✓ アーティスト: 恋の約束 -2025 ver.-
+[218/499] たいようのサンバ (5JMCv6Q8OEM)
+  - タイトル: たいようのサンバ
+  - アーティスト名を抽出できませんでした
+[219/499] 始まりの歌 (cjf9c6TwH6o)
+  ✓ タイトル: 緑黄色社会『始まりの歌』Official Video / Ryokuoushoku Shakai – Hajimarino Uta
+  ✓ アーティスト: 緑黄色社会『始まりの歌』Official Video
+[220/499] だから僕は音楽を辞めた (KTZ-y85Erus)
+  ✓ タイトル: ヨルシカ - だから僕は音楽を辞めた (Music Video)
+  ✓ アーティスト: ヨルシカ
+
+  休憩中... (220/499)
+
+[221/499] III (eUJjeYVlEKA)
+  - タイトル: III (Cover) | Justen x Sena
+  - アーティスト名を抽出できませんでした
+[222/499] アンビバレント (e_pdE__o5D8)
+  ✓ タイトル: 【Official】Uru 「アンビバレント」 TVアニメ『薬屋のひとりごと』第2クールOPテーマ
+  ✓ アーティスト: Uru
+[223/499] ファンターネ! (8yJffvClwuY)
+  - タイトル: 「 ファンターネOP～ファン ファン ファン！」♪スペステ2022から
+  - アーティスト名を抽出できませんでした
+[224/499] ツキミソウ (WAMxwRtNrPY)
+  ✓ タイトル: Novelbright - ツキミソウ [Official Music Video]
+  ✓ アーティスト: Novelbright
+[225/499] ハロ (o2PwpMc9Bks)
+  - タイトル: ハロ
+  - アーティスト名を抽出できませんでした
+[226/499] スーパースター (T0jZGhaaYYk)
+  - タイトル: Super Star Ni Nattara
+  - アーティスト名を抽出できませんでした
+[227/499] なにやってもうまくいかない (vxoKuhPca-A)
+  ✓ タイトル: 【meiyo】なにやってもうまくいかない【MV】
+  ✓ アーティスト: meiyo
+[228/499] 相思相愛 (VmSNNOTB_FE)
+  - タイトル: aiko-『相思相愛』music video
+  - アーティスト名を抽出できませんでした
+[229/499] 青春ラプソディ (q2ekMmjvOZI)
+  ✓ タイトル: なにわ男子 - 青春ラプソディ [Official Music Video] YouTube ver.
+  ✓ アーティスト: なにわ男子
+[230/499] 美人 (ix9_dWrC2ec)
+  ✓ タイトル: ちゃんみな - 美人 / THE FIRST TAKE
+  ✓ アーティスト: ちゃんみな
+
+  休憩中... (230/499)
+
+[231/499] ハート (ZSaTxMkEHas)
+  ✓ タイトル: あいみょん - ハート【OFFICIAL MUSIC VIDEO】
+  ✓ アーティスト: あいみょん
+[232/499] ナハトムジーク (Dsylo684yWA)
+  ✓ タイトル: Mrs. GREEN APPLE「ナハトムジーク」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[233/499] イチカバチカ (hyNymq0bLmc)
+  ✓ タイトル: TVアニメ「はなかっぱ」EDテーマ「イチカバチカ」映像
+  ✓ アーティスト: TVアニメ
+[234/499] 会いにいくのに (iqSspWjCA6s)
+  ✓ タイトル: あいみょん – 会いに行くのに【OFFICIAL MUSIC VIDEO】
+  ✓ アーティスト: OFFICIAL MUSIC VIDEO
+[235/499] 名前は片想い (aqoeNOw4_uQ)
+  ✓ タイトル: indigo la End「名前は片想い」
+  ✓ アーティスト: indigo la End
+[236/499] 《A》BEGINNING (aIXcSB9fSyo)
+  ✓ タイトル: Aぇ! group「《A》BEGINNING」Official Music Video - Streaming Ver. -
+  ✓ アーティスト: Aぇ! group「《A》BEGINNING」Official Music Video
+[237/499] 世界中のこどもたちが (Y70WHbXJ8-k)
+  ✓ タイトル: ♪世界中のこどもたちが - 世界中のこどもたちが いちどに 笑ったら〜♪〈振り付き〉
+  ✓ アーティスト: ♪世界中のこどもたちが
+[238/499] 二度寝 (ajejsaWPf0E)
+  ✓ タイトル: 二度寝 - Nidone
+  ✓ アーティスト: 二度寝
+[239/499] オーバーライド (LLjfal8jCYI)
+  ✓ タイトル: オーバーライド - 重音テトSV[吉田夜世]
+  ✓ アーティスト: オーバーライド
+[240/499] ハッピー・ジャムジャム (lZRNUvDOzmY)
+  ✓ タイトル: ハッピー・ジャムジャム｜しまじろうコンサート連動曲 【しまじろうチャンネル公式】
+  ✓ アーティスト: しまじろうチャンネル公式
+
+  休憩中... (240/499)
+
+[241/499] 無責任でええじゃないかLOVE (I-xwDWfGIc4)
+  ✓ タイトル: KAMIGATA BOYZ - 無責任でええじゃないかLOVE [Official Music Video]
+  ✓ アーティスト: KAMIGATA BOYZ
+[242/499] サンサンたいそう (y6lqPw8T9G4)
+  - タイトル: サンサンたいそう （テレビサイズver.）［公式エンディングテーマ］
+  - アーティスト名を抽出できませんでした
+[243/499] ロミエット (YpmTtHftd9k)
+  - タイトル: 【MV】フォーエイト48 -ロミエット (Official Music Video)/Lyric DECO*27
+  - アーティスト名を抽出できませんでした
+[244/499] 女々しくて (BC9P3DSZu0A)
+  ✓ タイトル: ゴールデンボンバー「女々しくて」MV
+  ✓ アーティスト: ゴールデンボンバー
+[245/499] NEW KAWAII (7Am9TCA3WrA)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「NEW KAWAII」
+  ✓ アーティスト: FRUITS ZIPPER
+[246/499] I wonder (RWfi_xJkuJg)
+  ✓ タイトル: Da-iCE /「I wonder」Performance Video
+  ✓ アーティスト: Da-iCE /
+[247/499] ライラック (QjrkrVmC-8M)
+  ✓ タイトル: Mrs. GREEN APPLE「ライラック」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[248/499] 翼をください (XTuJKMdxWe8)
+  - タイトル: 翼をください（混声三部合唱）　歌：AIきりたん、AI謡子（歌詞付き）
+  - アーティスト名を抽出できませんでした
+[249/499] 混沌ブギ (1Swg-aBO9eY)
+  ✓ タイトル: 混沌ブギ / jon-YAKITORY, 初音ミク -Konton Boogie / jon-YAKITORY, Hatsune Miku-
+  ✓ アーティスト: 混沌ブギ
+[250/499] 廻廻奇譚 (1tk1pqwrOys)
+  ✓ タイトル: 廻廻奇譚 - Eve MV
+  ✓ アーティスト: 廻廻奇譚
+
+  休憩中... (250/499)
+
+[251/499] パジャマパーティーズのうた (LzzW_TBL558)
+  - タイトル: パジャマパーティーズのうた
+  - アーティスト名を抽出できませんでした
+[252/499] The Answer (ZQM7Iy9paj8)
+  ✓ タイトル: THE ANSWER - ChanMyae MgCho (OFFICIAL MUSIC VIDEO)
+  ✓ アーティスト: THE ANSWER
+[253/499] 手のひらを太陽に (7vsl87kKdFM)
+  ✓ タイトル: 【♪うたアニメ】手のひらを太陽に〈うた：いっちー＆なる〉ぼくらはみんな　生きている〜♪【童謡・こどものうた】
+  ✓ アーティスト: ♪うたアニメ
+[254/499] イガク (F38EuG2dAyM)
+  ✓ タイトル: イガク - 重音テト
+  ✓ アーティスト: イガク
+[255/499] シンデレラボーイ (IVbY5edMfCA)
+  ✓ タイトル: Saucy Dog「シンデレラボーイ」Music Video ＜5th Mini Album「レイジーサンデー」2021.8.25 Release＞
+  ✓ アーティスト: Saucy Dog
+[256/499] Believe (1eSxTnMcTMs)
+  ✓ タイトル: 【合唱曲】Believe / 歌詞付き【9/200】
+  ✓ アーティスト: Believe
+[257/499] Click (G-LdNMa99oQ)
+  - タイトル: ME:I (ミーアイ) ⊹ &#39;Click&#39; Official MV
+  - アーティスト名を抽出できませんでした
+[258/499] 君をのせて (SEtbAEjanWo)
+  - タイトル: 君をのせて 天空の城ラピュタ 井上あずみ
+  - アーティスト名を抽出できませんでした
+[259/499] ハルノヒ (pfGI91CFtRg)
+  ✓ タイトル: あいみょん – ハルノヒ【OFFICIAL MUSIC VIDEO】
+  ✓ アーティスト: OFFICIAL MUSIC VIDEO
+[260/499] だれかの心臓になれたなら (hZFBTnzKa54)
+  - タイトル: だれかの心臓になれたなら /ユリイ・カノン feat.GUMI
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (260/499)
+
+[261/499] 最上級にかわいいの！ (Y4KjiTGBggw)
+  ✓ タイトル: 超ときめき♡宣伝部 / 「最上級にかわいいの！」Music Video
+  ✓ アーティスト: 超ときめき♡宣伝部 /
+[262/499] ゴーゴーゴー(運動会の歌) (8AGGOrylRSc)
+  - タイトル: ♪ゴーゴーゴー（運動会の歌）応援合戦〈振り付き〉
+  - アーティスト名を抽出できませんでした
+[263/499] Party!! (7-h8UA7fFmg)
+  ✓ タイトル: 緑黄色社会『Party!!』Official Video / Ryokuoushoku Shakai – Party!!
+  ✓ アーティスト: 緑黄色社会『Party!!』Official Video
+[264/499] 前前前世 (PDSkFeMVNFs)
+  ✓ タイトル: RADWIMPS - 前前前世 (movie ver.) [Official Music Video]
+  ✓ アーティスト: RADWIMPS
+[265/499] キュートなカノジョ (oFmup8lxUHw)
+  ✓ タイトル: 【可不】キュートなカノジョ【syudou】
+  ✓ アーティスト: 可不
+[266/499] HERO (ZuifkacZ0TA)
+  ✓ タイトル: Mili - Hero [Limbus Company]
+  ✓ アーティスト: Mili
+[267/499] アンパンマンたいそう (CaqHOvgAnO0)
+  - タイトル: アンパンマンたいそう （テレビサイズver.）［公式エンディングテーマ］
+  - アーティスト名を抽出できませんでした
+[268/499] POKÉDANCE (vikINVCvqCE)
+  - タイトル: Pokémon partners of different generations dancing &quot;POKÉDANCE&quot; Animation Music Video
+  - アーティスト名を抽出できませんでした
+[269/499] だいしきゅーだいしゅき (Uywq8FzxWiU)
+  ✓ タイトル: femme fatale「だいしきゅーだいしゅき」Music Video
+  ✓ アーティスト: femme fatale
+[270/499] プリキュア5、スマイル go go! (tAk0D14F_UM)
+  - タイトル: プリキュア5、スマイル go go！
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (270/499)
+
+[271/499] ゴーストルール feat. 初音ミク (KushW6zvazM)
+  ✓ タイトル: DECO*27 - ゴーストルール feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[272/499] えがおのまほう (PYGUHpDenlg)
+  ✓ タイトル: 大原ゆい子「えがおのまほう」ミュージックビデオ　DANCE ver.／TVアニメ『はなかっぱ』新OPテーマ
+  ✓ アーティスト: 大原ゆい子
+[273/499] GOD KNOWS… (5QNaSMiZ_-o)
+  - タイトル: God knows...
+  - アーティスト名を抽出できませんでした
+[274/499] Lemon (SX_ViT4Ra7k)
+  ✓ タイトル: 米津玄師  Kenshi Yonezu  - Lemon
+  ✓ アーティスト: 米津玄師  Kenshi Yonezu
+[275/499] すきっ！ (5OSrxVXI8wo)
+  ✓ タイトル: 超ときめき♡宣伝部 / すきっ！〜超ver〜 MUSIC VIDEO
+  ✓ アーティスト: 超ときめき♡宣伝部
+[276/499] おもかげ (Z2Z9V-4DMGw)
+  ✓ タイトル: milet×Aimer×幾田りら - おもかげ (produced by Vaundy) / THE FIRST TAKE
+  ✓ アーティスト: milet×Aimer×幾田りら
+[277/499] 舞い落ちる花びら (Fallin' Flower) (u4iDL3c0T1c)
+  ✓ タイトル: [MV]SEVENTEEN - 舞い落ちる花びら (Fallin&#39; Flower)
+  ✓ アーティスト: [MV]SEVENTEEN
+[278/499] W●RK (OCQhAtsKe4E)
+  ✓ タイトル: King Gnu × 椎名林檎 - W●RK (King Gnu Dome Tour THE GREATEST UNKNOWN at TOKYO DOME)
+  ✓ アーティスト: King Gnu × 椎名林檎
+[279/499] ラグトレイン (UnIhRpIT7nc)
+  - タイトル: 稲葉曇『ラグトレイン』Vo. 歌愛ユキ
+  - アーティスト名を抽出できませんでした
+[280/499] Dangerholic (i-PnC1tYnGM)
+  ✓ タイトル: Snow Man「Dangerholic」Music Video YouTube Ver.
+  ✓ アーティスト: Snow Man
+
+  休憩中... (280/499)
+
+[281/499] ギターと孤独と蒼い惑星 (ajjawsaBhHQ)
+  - タイトル: ギターと孤独と蒼い惑星
+  - アーティスト名を抽出できませんでした
+[282/499] ぼよよん行進曲 (O5Ht4CMkYG4)
+  ✓ タイトル: ♪ぼよよん行進曲 - どんなたいへんな ことがおきたって〜🎵〈振り付き〉（NHK Eテレ「おかあさんといっしょ」より）
+  ✓ アーティスト: ♪ぼよよん行進曲
+[283/499] ハナタバ (7xht3kQO_TM)
+  - タイトル: 『 ハナタバ 』/ MIMI feat. 可不
+  - アーティスト名を抽出できませんでした
+[284/499] Shining One (FGbv7b1UZAU)
+  ✓ タイトル: BE:FIRST / Shining One -Music Video-
+  ✓ アーティスト: BE:FIRST
+[285/499] おジャ魔女カーニバル!! (_mN4xKRRUkg)
+  - タイトル: おジャ魔女カーニバル!!
+  - アーティスト名を抽出できませんでした
+[286/499] アドベンチャー (Av3xaZkVpJs)
+  ✓ タイトル: YOASOBI「アドベンチャー」Official Music Video
+  ✓ アーティスト: YOASOBI
+[287/499] 勇気りんりん (dB9WAlAdP9w)
+  - タイトル: 勇気りんりん
+  - アーティスト名を抽出できませんでした
+[288/499] ぼくらの (exOi_zsOHwM)
+  ✓ タイトル: ぼくらの (Bokurano) - Eve Music Video
+  ✓ アーティスト: ぼくらの (Bokurano)
+[289/499] 阿修羅ちゃん (cyq5-StPISU)
+  ✓ タイトル: 【Ado】阿修羅ちゃん
+  ✓ アーティスト: Ado
+[290/499] Tokimeki (-_PKhPMXMDY)
+  ✓ タイトル: Tokimeki / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: Tokimeki
+
+  休憩中... (290/499)
+
+[291/499] 星座になれたら (fJh5UeiULZs)
+  ✓ タイトル: 【LIVE映像】結束バンド「星座になれたら」LIVE at 秀華祭/ 「ぼっち・ざ・ろっく！」劇中曲
+  ✓ アーティスト: 結束バンド
+[292/499] ベノム (oRJBwaZ59fQ)
+  ✓ タイトル: 【公式】 ベノム／かいりきベア feat.flower
+  ✓ アーティスト: 公式
+[293/499] たぶん (8iuLXODzL04)
+  ✓ タイトル: YOASOBI「たぶん」Official Music  Video
+  ✓ アーティスト: YOASOBI
+[294/499] D.D. (rSD7jb4Xjq8)
+  ✓ タイトル: Snow Man「D.D.」MV (YouTube ver.)
+  ✓ アーティスト: Snow Man
+[295/499] Imitation Rain (pTh-ncw31ZA)
+  ✓ タイトル: SixTONES - Imitation Rain [YouTube Ver.]
+  ✓ アーティスト: SixTONES
+[296/499] 猫 (1KgAear9rao)
+  - タイトル: 猫
+  - アーティスト名を抽出できませんでした
+[297/499] ハローハロー (VpjkFGiRQO8)
+  ✓ タイトル: Snow Man「HELLO HELLO」Music Video YouTube Ver.
+  ✓ アーティスト: Snow Man
+[298/499] ♡人生♡ (WNISLPMUz1E)
+  ✓ タイトル: コレサワ「♡人生♡」【Lyric Video】
+  ✓ アーティスト: コレサワ
+[299/499] ビビデバ (8ZP5eqm4JqM)
+  ✓ タイトル: ビビデバ / 星街すいせい(official)
+  ✓ アーティスト: ビビデバ
+[300/499] オレンジ (YkVjY1F-Eoc)
+  - タイトル: SPYAIR『オレンジ』Music Video（『劇場版ハイキュー!! ゴミ捨て場の決戦』主題歌）
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (300/499)
+
+[301/499] 水平線 (iqEr3P78fz8)
+  ✓ タイトル: back number - 水平線
+  ✓ アーティスト: back number
+[302/499] 世界はあなたに笑いかけている (dKKcSFWZ_vY)
+  - タイトル: 世界はあなたに笑いかけている
+  - アーティスト名を抽出できませんでした
+[303/499] フォニイ (9QLT1Aw_45s)
+  ✓ タイトル: フォニイ / phony - kafu [オリジナル]
+  ✓ アーティスト: フォニイ / phony
+[304/499] 春泥棒 (Sw1Flgub9s8)
+  ✓ タイトル: ヨルシカ - 春泥棒（OFFICIAL VIDEO）
+  ✓ アーティスト: ヨルシカ
+[305/499] シンクロニシティ (f0wbnQw89J0)
+  - タイトル: 乃木坂46 『シンクロニシティ』
+  - アーティスト名を抽出できませんでした
+[306/499] New Day (rohM60E7GYI)
+  - タイトル: New Day
+  - アーティスト名を抽出できませんでした
+[307/499] Poppin’ Hoppin’ Lovin’ (8KXbNShp8rs)
+  ✓ タイトル: なにわ男子 - Poppin&#39; Hoppin&#39; Lovin&#39; [Official Music Video] YouTube ver.
+  ✓ アーティスト: なにわ男子
+[308/499] ラブソング (_wvAzWIjKIg)
+  ✓ タイトル: [MV] LOVE SONG (&#39;92 Ver.) / CHAGE and ASKA
+  ✓ アーティスト: [MV] LOVE SONG (&#39;92 Ver.)
+[309/499] 残響散歌 (tLQLa6lM3Us)
+  ✓ タイトル: Aimer「Zankyosanka」MUSIC VIDEO（Demon Slayer:Kimetsu no Yaiba Entertainment District Arc Theme Song）
+  ✓ アーティスト: Aimer
+[310/499] ギラギラ (sOiMD45QGLs)
+  ✓ タイトル: 【Ado】ギラギラ
+  ✓ アーティスト: Ado
+
+  休憩中... (310/499)
+
+[311/499] ベテルギウス (cbqvxDTLMps)
+  - タイトル: 優里『ベテルギウス』Official Music Video
+  - アーティスト名を抽出できませんでした
+[312/499] 愛のうた (JiWEZbm6lhI)
+  - タイトル: 倖田來未-KODA KUMI-『愛のうた（album version）』～ 20th Year Special Full Ver. ～
+  - アーティスト名を抽出できませんでした
+[313/499] CHEMY×STORY (WzWsiCSCNMo)
+  - タイトル: CHEMY×STORY （『仮面ライダーガッチャード』主題歌）
+  - アーティスト名を抽出できませんでした
+[314/499] ダーリンダンス feat.初音ミク (Rkrm5foi188)
+  ✓ タイトル: 【公式】 ダーリンダンス／かいりきベア feat.初音ミク
+  ✓ アーティスト: 公式
+[315/499] GOAT (n26QbDJxkzM)
+  ✓ タイトル: G.O.A.T - Official Teaser | Sudheer Anand, Divya Bharathi | Leon James | Mogulla Chandrashekar
+  ✓ アーティスト: G.O.A.T
+[316/499] イエスタデイ (DuMqFknYHBs)
+  ✓ タイトル: Official髭男dism - イエスタデイ［Official Video］
+  ✓ アーティスト: Official髭男dism
+[317/499] 三原色 (nhOhFOoURnE)
+  ✓ タイトル: YOASOBI「三原色」Official Music Video
+  ✓ アーティスト: YOASOBI
+[318/499] ダダダダ天使 (ANp0qch3XVM)
+  ✓ タイトル: ダダダダ天使 / ナナヲアカリ
+  ✓ アーティスト: ダダダダ天使
+[319/499] HANABI (Tc9hI0fdIy8)
+  - タイトル: TOP GLOBAL HANABI VS ENEMY TOP GLOBAL HERO AND HIGH RANK🔥 SOLO HARDEST RANKED GAME!! (Who Will Win?)
+  - アーティスト名を抽出できませんでした
+[320/499] CRUISIN' (tKOMJ8lb0fo)
+  - タイトル: Cruisin&#39;   Gwyneth Paltrow &amp; Huey Lewis   Lyrics
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (320/499)
+
+[321/499] 幽霊東京 (lWl5viCqGSc)
+  ✓ タイトル: 幽霊東京 / 初音ミク
+  ✓ アーティスト: 幽霊東京
+[322/499] 秒針を噛む (GJI4Gv7NbmE)
+  - タイトル: ずっと真夜中でいいのに。『秒針を噛む』MV (ZUTOMAYO – Byoushinwo Kamu)
+  - アーティスト名を抽出できませんでした
+[323/499] ダイヤモンドスマイル (uQx7Lmb-dcg)
+  ✓ タイトル: なにわ男子 - ダイヤモンドスマイル [Music Video Dance ver.]
+  ✓ アーティスト: なにわ男子
+[324/499] きゅうくらりん (2b1IexhKPz4)
+  ✓ タイトル: きゅうくらりん / いよわ feat.可不（Kyu-kurarin / Iyowa feat.Kafu）
+  ✓ アーティスト: きゅうくらりん
+[325/499] I'm a mess (ma4lm5eAdvg)
+  ✓ タイトル: MY FIRST STORY - I&#39;m a mess (Audio)
+  ✓ アーティスト: MY FIRST STORY
+[326/499] ひとりごつ (8SoWzkMO1YQ)
+  - タイトル: ひとりごつ
+  - アーティスト名を抽出できませんでした
+[327/499] 春を告げる (DC6JppqHkaM)
+  ✓ タイトル: yama - 春を告げる (Official Video)
+  ✓ アーティスト: yama
+[328/499] さくらんぼ (upODO6OuOOk)
+  ✓ タイトル: 大塚 愛 / さくらんぼ
+  ✓ アーティスト: 大塚 愛
+[329/499] ロキ (Xg-qfsKN2_E)
+  - タイトル: みきとP 『 ロキ 』 MV
+  - アーティスト名を抽出できませんでした
+[330/499] 不思議 (ilnLczvLGAY)
+  - タイトル: 星野源 – 不思議 (Official Video)
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (330/499)
+
+[331/499] unravel (Fve_lHIPa-I)
+  - タイトル: TK from 凛として時雨 『unravel』 Music Video(Full Size)
+  - アーティスト名を抽出できませんでした
+[332/499] Jewelry(Prod. imase) (Raf9odbiu8g)
+  - タイトル: LE SSERAFIM (르세라핌) &#39;Jewelry (Prod. imase)&#39; LIVE CLIP
+  - アーティスト名を抽出できませんでした
+[333/499] 踊り子 (7HgJIAUtICU)
+  ✓ タイトル: 【第75回NHK紅白歌合戦 歌唱曲】踊り子 / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: 踊り子
+[334/499] 証拠 (WsZzYDa6XYE)
+  ✓ タイトル: WEST. - 証拠 from WOWOW presents WEST. 10th Anniversary Live &quot;W&quot;
+  ✓ アーティスト: WEST.
+[335/499] 斜陽 (bqigIHMComE)
+  ✓ タイトル: ヨルシカ - 斜陽（OFFICIAL VIDEO）
+  ✓ アーティスト: ヨルシカ
+[336/499] 第六感 (Ue6VQTcKPQo)
+  ✓ タイトル: Reol - &#39;第六感 / THE SIXTH SENSE&#39; Music Video
+  ✓ アーティスト: Reol
+[337/499] ボルテッカー feat. 初音ミク (C-7TIDIKc98)
+  ✓ タイトル: DECO*27 - ボルテッカー feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[338/499] わんだふるぷりきゅあ!EVOLUTION!! (iQxl-nohiqA)
+  - タイトル: わんだふるぷりきゅあ！evolution!!
+  - アーティスト名を抽出できませんでした
+[339/499] FUN☆FUN☆わんだふるDAYS! (1ikx1Dkf_Us)
+  - タイトル: FUN☆FUN☆わんだふるDAYS！
+  - アーティスト名を抽出できませんでした
+[340/499] J0KER×JOK3R (qBiydM11RkI)
+  ✓ タイトル: シクフォニ - J0KER×JOK3R [Official Music Video]
+  ✓ アーティスト: シクフォニ
+
+  休憩中... (340/499)
+
+[341/499] 祝福 (3eytpBOkOFA)
+  ✓ タイトル: YOASOBI「祝福」Official Music Video (『機動戦士ガンダム 水星の魔女』オープニングテーマ)
+  ✓ アーティスト: YOASOBI
+[342/499] タイムパラドックス (ewhRE-BvJCg)
+  ✓ タイトル: タイムパラドックス (『映画ドラえもん のび太の地球交響楽』主題歌) / Vaundy：MUSIC VIDEO
+  ✓ アーティスト: タイムパラドックス (『映画ドラえもん のび太の地球交響楽』主題歌)
+[343/499] 冬と春 (hu6y1ol9yUg)
+  ✓ タイトル: back number - 冬と春
+  ✓ アーティスト: back number
+[344/499] 丸の内サディスティック (4tlUwgtgdZA)
+  - タイトル: Marunouchi Sadistic
+  - アーティスト名を抽出できませんでした
+[345/499] LOVE TRIGGER (eybKo4WgvgU)
+  ✓ タイトル: Snow Man「LOVE TRIGGER」Music Video
+  ✓ アーティスト: Snow Man
+[346/499] 愛をこめて花束を (gU5oN0KVofU)
+  - タイトル: Superfly 『愛をこめて花束を』Music Video
+  - アーティスト名を抽出できませんでした
+[347/499] さんぽ (l7ULux28tZ0)
+  ✓ タイトル: ♪さんぽ - あるこう あるこう わたしはげんき〜♪〈振り付き〉【スタジオジブリ作品 映画「となりのトトロ」オープニングテーマ】
+  ✓ アーティスト: ♪さんぽ
+[348/499] CHEERS!デリシャスパーティ プリキュア (XXB6_KvfJuM)
+  - タイトル: 「デリシャスパーティ♡プリキュア」オープニング主題歌「Cheers！デリシャスパーティ♡プリキュア」(ノンテロップver)
+  - アーティスト名を抽出できませんでした
+[349/499] ラビットホール (eSW2LVbPThw)
+  ✓ タイトル: DECO*27 - ラビットホール feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[350/499] レオ (uxYLXaXtH9I)
+  - タイトル: 優里『レオ』Official Music Video
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (350/499)
+
+[351/499] ichiban (ErI-X4y6Ddg)
+  ✓ タイトル: King &amp; Prince「ichiban」Special Dance Clip YouTube Edit
+  ✓ アーティスト: King &amp; Prince
+[352/499] オドループ (PCp2iXA1uLE)
+  ✓ タイトル: フレデリック「オドループ」Music Video | Frederic &quot;oddloop&quot;
+  ✓ アーティスト: フレデリック
+[353/499] 幾億光年 (P7bVX6fJfCg)
+  ✓ タイトル: Omoinotake | 幾億光年 【Official Music Video】
+  ✓ アーティスト: Official Music Video
+[354/499] LOOK AT ME (ybtOq8Wbf1c)
+  - タイトル: LOOK AT ME
+  - アーティスト名を抽出できませんでした
+[355/499] ヨワネハキ (wUHBqw7N_Z4)
+  ✓ タイトル: 【102】[feat. 和ぬか, asmi] ヨワネハキ  / MAISONdes
+  ✓ アーティスト: [feat. 和ぬか, asmi] ヨワネハキ
+[356/499] ドラマツルギー (jJzw1h5CR-I)
+  ✓ タイトル: ドラマツルギー - Eve  MV
+  ✓ アーティスト: ドラマツルギー
+[357/499] Bye-Good-Bye (Let5-KJ0giQ)
+  ✓ タイトル: BE:FIRST / Bye-Good-Bye -Live from THE FIRST FINAL-
+  ✓ アーティスト: BE:FIRST
+[358/499] ブタサンダー (j8zb5q2UkxE)
+  ✓ タイトル: Yukopi - ブタサンダー  (feat.歌愛ユキ)
+  ✓ アーティスト: Yukopi
+[359/499] UP TO ME! (DmU4hdW1bNA)
+  ✓ タイトル: LANY - up to me (official lyric video)
+  ✓ アーティスト: LANY
+[360/499] W／X／Y (mp2-w15SXms)
+  ✓ タイトル: W/X/Y - Tani Yuuki (Official Lyric Video)
+  ✓ アーティスト: W/X/Y
+
+  休憩中... (360/499)
+
+[361/499] 愛包ダンスホール (bnofYmfKLeo)
+  - タイトル: HIMEHINA『愛包ダンスホール』MV
+  - アーティスト名を抽出できませんでした
+[362/499] すきっちゅーの! (jOZSjMKuE1g)
+  - タイトル: すきっちゅーの！feat. ちゅーたん（CV：早見沙織）／HoneyWorks
+  - アーティスト名を抽出できませんでした
+[363/499] 宿命 (-kgOFJG881I)
+  ✓ タイトル: Official髭男dism - 宿命［Official Video］
+  ✓ アーティスト: Official髭男dism
+[364/499] DEAR MY LOVER (JEi-3ByKzEE)
+  ✓ タイトル: Hey! Say! JUMP - DEAR MY LOVER [Official Music Video YouTube ver.]
+  ✓ アーティスト: Hey! Say! JUMP
+[365/499] 青春フォトグラフ (X5M3OG7JCzQ)
+  - タイトル: 青春フォトグラフ
+  - アーティスト名を抽出できませんでした
+[366/499] 栞 (j4XsCJHfplg)
+  ✓ タイトル: クリープハイプ -「栞」(MUSIC VIDEO)
+  ✓ アーティスト: クリープハイプ -
+[367/499] YELL (KWuBFuc2hX8)
+  - タイトル: YELL
+  - アーティスト名を抽出できませんでした
+[368/499] 旅立ちの日に (DlO308doIyU)
+  ✓ タイトル: 川嶋あい / 旅立ちの日に・・・（Lyrics）
+  ✓ アーティスト: 川嶋あい
+[369/499] 3月9日 (UNRJyBHziX4)
+  ✓ タイトル: レミオロメン - 3月9日
+  ✓ アーティスト: レミオロメン
+[370/499] Good Luck! (I8R5S34vMbs)
+  ✓ タイトル: Good Luck -  Htet Yan
+  ✓ アーティスト: Good Luck
+
+  休憩中... (370/499)
+
+[371/499] ヒロイン (VPZK72W4Xxw)
+  ✓ タイトル: back number - ヒロイン (full)
+  ✓ アーティスト: back number
+[372/499] 愛の花 (JuyQQUqD64c)
+  ✓ タイトル: あいみょん – 愛の花【OFFICIAL MUSIC VIDEO】
+  ✓ アーティスト: OFFICIAL MUSIC VIDEO
+[373/499] 酔いどれ知らず feat.GUMI (vB8sxY_PJ_w)
+  ✓ タイトル: 【GUMI】酔いどれ知らず【Kanaria】
+  ✓ アーティスト: GUMI
+[374/499] 寝起きヤシの木 (DAiWR7BKqxY)
+  ✓ タイトル: 寝起きヤシの木 / シナモン【歌ってみた】
+  ✓ アーティスト: 寝起きヤシの木
+[375/499] Melody (O_T7PlgAh3M)
+  ✓ タイトル: 【纯享版】宁艺卓《Melody》 丨#舞台2023 The Next EP4丨#TheNext
+  ✓ アーティスト: 纯享版
+[376/499] ガチやべぇじゃん (lgxCR49HG1g)
+  - タイトル: 【MV】ガチやべぇじゃん feat.ななもり。/ P丸様。
+  - アーティスト名を抽出できませんでした
+[377/499] おかえりらぶっ！ (c3DazWbrI_Q)
+  - タイトル: 【MV】おかえりらぶっ！／すとぷり【HoneyWorks】
+  - アーティスト名を抽出できませんでした
+[378/499] 魂のルフラン (Wl7IW7OiaHc)
+  - タイトル: 魂のルフラン
+  - アーティスト名を抽出できませんでした
+[379/499] Start over! (OfAUb4JU1Ks)
+  - タイトル: Start Over
+  - アーティスト名を抽出できませんでした
+[380/499] 光の中へ (29t3pJd75XU)
+  ✓ タイトル: 【Lyric Video】結束バンド「光の中へ」／ TVアニメ「ぼっち・ざ・ろっく！」
+  ✓ アーティスト: 結束バンド
+
+  休憩中... (380/499)
+
+[381/499] I Wish (B6cqrjlqjuM)
+  - タイトル: I Wish
+  - アーティスト名を抽出できませんでした
+[382/499] ただ君に晴れ (-VKIqrvVOpo)
+  ✓ タイトル: ヨルシカ - ただ君に晴れ (MUSIC VIDEO)
+  ✓ アーティスト: ヨルシカ
+[383/499] 乙女解剖 feat. 初音ミク (7zwCIz-Ohn4)
+  ✓ タイトル: DECO*27 - 乙女解剖 feat. 初音ミク
+  ✓ アーティスト: DECO*27
+[384/499] 晩餐歌 (oZpYEEcvu5I)
+  - タイトル: tuki.『晩餐歌』Official Music Video
+  - アーティスト名を抽出できませんでした
+[385/499] 逆光 (gt-v_YCkaMY)
+  ✓ タイトル: 【Ado】逆光（ウタ from ONE PIECE FILM RED）
+  ✓ アーティスト: Ado
+[386/499] ネクタリン (NNPzNAEKSK8)
+  ✓ タイトル: [天てれ] マカロニえんぴつ作テーマソング『ネクタリン』MV(歌:てれび戦士/振付:yurinasia) | 25年度版【天才てれびくん】| NHK
+  ✓ アーティスト: 天才てれびくん
+[387/499] NEW Smile (ID6TB4slrCQ)
+  - タイトル: JO1｜&#39;NEWSmile&#39; Official MV (第74回 NHK紅白歌合戦 披露曲)
+  - アーティスト名を抽出できませんでした
+[388/499] バイオレンス (nkPdMQCizIQ)
+  - タイトル: 女王蜂『バイオレンス(VIOLENCE)』Official MV
+  - アーティスト名を抽出できませんでした
+[389/499] Ｗ (_QnW6gWUDUU)
+  ✓ タイトル: Snow Man「W」Music Video YouTube Ver.
+  ✓ アーティスト: Snow Man
+[390/499] ロマンスの神様 (T8yZWCg85Cs)
+  ✓ タイトル: 広瀬香美 - ロマンスの神様 (Official Video)
+  ✓ アーティスト: 広瀬香美
+
+  休憩中... (390/499)
+
+[391/499] NIGHT DANCER (kagoEGKHZvU)
+  ✓ タイトル: 【imase】NIGHT DANCER（MV）
+  ✓ アーティスト: imase
+[392/499] 燈 (4jWzGkRsHw8)
+  ✓ タイトル: 崎山蒼志 Soushi Sakiyama / 燈 Akari [Official Music Video]
+  ✓ アーティスト: 崎山蒼志 Soushi Sakiyama
+[393/499] おひとりさま天国 (Etq_BEjQE10)
+  - タイトル: 乃木坂46『おひとりさま天国』
+  - アーティスト名を抽出できませんでした
+[394/499] 青春チョコレート (AJPn41Wk3IA)
+  - タイトル: 【MV】青春チョコレート／すとぷり
+  - アーティスト名を抽出できませんでした
+[395/499] グッバイ宣言 (dHXC_ahjtEE)
+  - タイトル: Chinozo &#39;グッバイ宣言&#39; feat.FloweR
+  - アーティスト名を抽出できませんでした
+[396/499] ビターチョコデコレーション (XCyKJD6uQyg)
+  ✓ タイトル: 【初音ミク】ビターチョコデコレーション【syudou】
+  ✓ アーティスト: 初音ミク
+[397/499] ラムのラブソング (MBEgw_kfhzc)
+  - タイトル: ラムのラブソング
+  - アーティスト名を抽出できませんでした
+[398/499] 魔法少女とチョコレゐト feat. 初音ミク (T2kS1gAbxhc)
+  ✓ タイトル: ピノキオピー - 魔法少女とチョコレゐト feat. 初音ミク / Magical Girl and Chocolate
+  ✓ アーティスト: ピノキオピー
+[399/499] ショコラカタブラ (c5j7lpWprro)
+  ✓ タイトル: 【Ado】ショコラカタブラ
+  ✓ アーティスト: Ado
+[400/499] キュン (K5HPhoqyO4U)
+  - タイトル: 日向坂46 『キュン』
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (400/499)
+
+[401/499] ソングオブザデッド (zJRZ9ybACB4)
+  ✓ タイトル: KANA-BOON 『Song of the Dead』Music Video【Anime『Zom 100: Bucket List of the Dead』OP Theme】
+  ✓ アーティスト: Anime『Zom 100: Bucket List of the Dead』OP Theme
+[402/499] 聖者の行進 (e9RVh2bXA8M)
+  ✓ タイトル: 聖者の行進 / キタニタツヤ – When The Weak Go Marching In / Tatsuya Kitani
+  ✓ アーティスト: 聖者の行進
+[403/499] Happiness (5xo2cB0w_4k)
+  - タイトル: Happiness
+  - アーティスト名を抽出できませんでした
+[404/499] アスノヨゾラ哨戒班 (XogSflwXgpw)
+  ✓ タイトル: Orangestar - アスノヨゾラ哨戒班 (feat. IA) Official Video
+  ✓ アーティスト: Orangestar
+[405/499] スキスキ星人 (FmG1Sbb2n0A)
+  - タイトル: 【MV】スキスキ星人／すとぷり🍓【ナユタン星人】
+  - アーティスト名を抽出できませんでした
+[406/499] ミライチズ (8NQ3LtVBaJo)
+  - タイトル: ミライチズ／夜のひと笑い （Official Music Video）
+  - アーティスト名を抽出できませんでした
+[407/499] 高嶺の花子さん (SII-S-zCg-c)
+  ✓ タイトル: back number - 高嶺の花子さん (full)
+  ✓ アーティスト: back number
+[408/499] シュガーソングとビターステップ (ERLEeGVWYxg)
+  ✓ タイトル: UNISON SQUARE GARDEN「シュガーソングとビターステップ」MV
+  ✓ アーティスト: UNISON SQUARE GARDEN
+[409/499] ドライフラワー (kzZ6KXDM1RI)
+  - タイトル: 優里『ドライフラワー』Official Music Video -ディレクターズカットver.-
+  - アーティスト名を抽出できませんでした
+[410/499] 推し★ごと (4WqZ5os5rN8)
+  - タイトル: 【MV】推し★ごと／HoneyWorks feat.かぴ
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (410/499)
+
+[411/499] Pretender (TQ8WlA2GXbk)
+  ✓ タイトル: Official髭男dism - Pretender［Official Video］
+  ✓ アーティスト: Official髭男dism
+[412/499] ひろがるスカイ!プリキュア~HERO GIRLS~ (tMU0-b83bfk)
+  - タイトル: ひろがるスカイ！プリキュア ～Hero Girls～
+  - アーティスト名を抽出できませんでした
+[413/499] Bling-Bang-Bang-Born (mLW35YMzELE)
+  - タイトル: Creepy Nuts｢Bling-Bang-Bang-Born｣ × TV Anime｢マッシュル-MASHLE-｣ Collaboration Music Video #BBBBダンス
+  - アーティスト名を抽出できませんでした
+[414/499] ウィークエンダー (R_ipNv527rE)
+  ✓ タイトル: Hey! Say! JUMP - ウィークエンダー [Official Music Video]
+  ✓ アーティスト: Hey! Say! JUMP
+[415/499] BIRI-BIRI (shZyg5VFI1Y)
+  ✓ タイトル: YOASOBI「Biri-Biri」 Official Music Video
+  ✓ アーティスト: YOASOBI
+[416/499] ランデヴー (OGrGg8TvEjU)
+  - タイトル: ランデヴー
+  - アーティスト名を抽出できませんでした
+[417/499] 男の子のために可愛いわけじゃない！ (-lgHpWPtV4U)
+  ✓ タイトル: 男の子のために可愛いわけじゃない！／星乃夢奈【Official Music Video】
+  ✓ アーティスト: Official Music Video
+[418/499] ツキヨミ (Rp0Z9YVOnKQ)
+  ✓ タイトル: King &amp; Prince「ツキヨミ」MV YouTube Edit
+  ✓ アーティスト: King &amp; Prince
+[419/499] 粛聖!!ロリ神レクイエム☆ (Ci_zad39Uhw)
+  ✓ タイトル: 【オリジナル楽曲】粛聖!! ロリ神レクイエム☆ / しぐれうい（9さい）【IOSYS（まろん&amp;D.watt）】
+  ✓ アーティスト: 粛聖!! ロリ神レクイエム☆
+[420/499] Habit (8OZDgBmehbA)
+  ✓ タイトル: SEKAI NO OWARI「Habit」
+  ✓ アーティスト: SEKAI NO OWARI
+
+  休憩中... (420/499)
+
+[421/499] 紅蓮の弓矢 (2B6nj38AdD0)
+  - タイトル: 紅蓮の弓矢
+  - アーティスト名を抽出できませんでした
+[422/499] RUN (1RoRf-AinSY)
+  ✓ タイトル: [091] 【timelesz project】「RUN」パフォーマンス動画【6次(ファイナル)審査】
+  ✓ アーティスト: [091]
+[423/499] 天ノ弱 feat.GUMI (2-zPY0vrpjQ)
+  - タイトル: 天ノ弱／164 feat.GUMI（公式)
+  - アーティスト名を抽出できませんでした
+[424/499] 今-明日 世界が終わっても- (vvN4FgqNXwE)
+  - タイトル: SEVENTEEN (세븐틴) &#39;今 -明日 世界が終わっても-&#39; (Ima -Even if the world ends tomorrow-) Official MV
+  - アーティスト名を抽出できませんでした
+[425/499] 恋 (jhOVibLEDhA)
+  - タイトル: 星野源 – 恋 (Official Video)
+  - アーティスト名を抽出できませんでした
+[426/499] ファジーネーブル (TSYtV4xa8Pw)
+  ✓ タイトル: Conton Candy - ファジーネーブル [Official Video]
+  ✓ アーティスト: Conton Candy
+[427/499] 花になって (v-WcMQbXbKY)
+  ✓ タイトル: 緑黄色社会『花になって』Official Video / Ryokuoushoku Shakai – Be a flower
+  ✓ アーティスト: 緑黄色社会『花になって』Official Video
+[428/499] SPECIALZ (fhzKLBZJC3w)
+  ✓ タイトル: King Gnu - SPECIALZ
+  ✓ アーティスト: King Gnu
+[429/499] STAR☆T☆RAIN (S-UmqvA7uR8)
+  ✓ タイトル: 【推しの子】STAR☆T☆RAIN/新生B小町【第十一話「アイドル」挿入歌】
+  ✓ アーティスト: STAR☆T☆RAIN/新生B小町【第十一話
+[430/499] にんげんっていいな (dUXeJTzSCjc)
+  ✓ タイトル: にんげんっていいな - まんが日本昔ばなし 歌詞付き フル 高音質
+  ✓ アーティスト: にんげんっていいな
+
+  休憩中... (430/499)
+
+[431/499] 勇者 (OIBODIPC_8Y)
+  ✓ タイトル: YOASOBI「勇者」 Official Music Video／TVアニメ『葬送のフリーレン』オープニングテーマ
+  ✓ アーティスト: YOASOBI
+[432/499] パプリカ (T0valuAksuo)
+  ✓ タイトル: 【パプリカ】ダンス ミュージックビデオ | Foorin×米津玄師 | NHK
+  ✓ アーティスト: パプリカ
+[433/499] シャルル (TA5OFS_xX0c)
+  - タイトル: シャルル／flower
+  - アーティスト名を抽出できませんでした
+[434/499] 美少女無罪♡パイレーツ (KfZR9jVP6tw)
+  ✓ タイトル: 【original anime MV】美少女無罪♡パイレーツ【hololive/宝鐘マリン】
+  ✓ アーティスト: original anime MV
+[435/499] こっから (yvHfl1JEPc0)
+  - タイトル: SixTONES – こっから [YouTube ver.]
+  - アーティスト名を抽出できませんでした
+[436/499] ドキメキダイアリー (cL_M2MSzYQM)
+  ✓ タイトル: ドキメキダイアリー - asmi feat. Chinozo (Official Music Video)
+  ✓ アーティスト: ドキメキダイアリー
+[437/499] めざせポケモンマスター (kbsRaNXfsew)
+  ✓ タイトル: 【公式】「めざせポケモンマスター -with my friends-」テレビアニメ「ポケットモンスター めざせポケモンマスター」新オープニングテーマ
+  ✓ アーティスト: 公式
+[438/499] 最高到達点 (SR89b0qqRAg)
+  ✓ タイトル: SEKAI NO OWARI「最高到達点」ONE PIECE リリックMV
+  ✓ アーティスト: SEKAI NO OWARI
+[439/499] Surges (QvWsAIc5mO8)
+  ✓ タイトル: Orangestar - Surges (feat. 夏背 &amp; ルワン) / カロリーメイト web movie
+  ✓ アーティスト: Orangestar
+[440/499] 第ゼロ感 (EsJGbHJyXYc)
+  - タイトル: 10-FEET – 第ゼロ感（映画『THE FIRST SLAM DUNK』エンディング主題歌）
+  - アーティスト名を抽出できませんでした
+
+  休憩中... (440/499)
+
+[441/499] 大好きになればいいんじゃない？ (qwz9v5nCqm0)
+  - タイトル: 【MV】大好きになればいいんじゃない？／すとぷり【HoneyWorks】
+  - アーティスト名を抽出できませんでした
+[442/499] ブラザービート (LZW4zUmE0qY)
+  ✓ タイトル: Snow Man「ブラザービート」Music Video
+  ✓ アーティスト: Snow Man
+[443/499] となりのトトロ (PNkaoGmelzc)
+  - タイトル: ♪となりのトトロ/井上あずみ
+  - アーティスト名を抽出できませんでした
+[444/499] 唱 (pgXpM4l_MwI)
+  ✓ タイトル: 【Ado】 唱
+  ✓ アーティスト: Ado
+[445/499] トンデモワンダーズ (ZfVWqos23xs)
+  ✓ タイトル: トンデモワンダーズ / ワンダーランズ×ショウタイム × KAITO
+  ✓ アーティスト: トンデモワンダーズ
+[446/499] 勇気100% (09WKkUn4-uM)
+  - タイトル: 勇気100%
+  - アーティスト名を抽出できませんでした
+[447/499] 小さな恋のうた (JoJ6lnF07U4)
+  - タイトル: 小さな恋のうた
+  - アーティスト名を抽出できませんでした
+[448/499] ハッピーサプライズ (90FhT0I0g7w)
+  ✓ タイトル: なにわ男子 - ハッピーサプライズ [Official Music Video] YouTube ver.
+  ✓ アーティスト: なにわ男子
+[449/499] ホワイトキス (rFlsY2F7K-M)
+  ✓ タイトル: ホワイトキス - 鈴木鈴木【Official Music Video】
+  ✓ アーティスト: ホワイトキス
+[450/499] ハピネス (HeXVJvEYynw)
+  ✓ タイトル: ARASHI - Happiness [Official Music Video]
+  ✓ アーティスト: ARASHI
+
+  休憩中... (450/499)
+
+[451/499] silent (03Xa38nfhGw)
+  ✓ タイトル: SEKAI NO OWARI「silent」
+  ✓ アーティスト: SEKAI NO OWARI
+[452/499] クリスマスソング (7zBeQezaz4U)
+  ✓ タイトル: back number - クリスマスソング (full)
+  ✓ アーティスト: back number
+[453/499] サウダージ (lzsB4eKPdJI)
+  - タイトル: ポルノグラフィティ『サウダージ』MUSIC VIDEO
+  - アーティスト名を抽出できませんでした
+[454/499] CITRUS (ye1YacA8HvE)
+  ✓ タイトル: Da-iCE /「CITRUS」(日本テレビ系日曜ドラマ「極主夫道」主題歌) Music Video
+  ✓ アーティスト: Da-iCE /
+[455/499] DANZEN!ふたりはプリキュア (DN7BvSVupAw)
+  - タイトル: DANZEN！ふたりはプリキュア
+  - アーティスト名を抽出できませんでした
+[456/499] 転生林檎 feat. 初音ミク (LYWP8HtgeLQ)
+  ✓ タイトル: ピノキオピー - 転生林檎 feat. 初音ミク / Reincarnation Apple
+  ✓ アーティスト: ピノキオピー
+[457/499] シンデレラガール (Hx9iZZCrQeE)
+  ✓ タイトル: King &amp; Prince「シンデレラガール」MV YouTube Edit
+  ✓ アーティスト: King &amp; Prince
+[458/499] トンデモワンダーズ (ZfVWqos23xs)
+  ✓ タイトル: トンデモワンダーズ / ワンダーランズ×ショウタイム × KAITO
+  ✓ アーティスト: トンデモワンダーズ
+[459/499] 粉雪 (1wxTksLZ1Mw)
+  ✓ タイトル: レミオロメン - 粉雪
+  ✓ アーティスト: レミオロメン
+[460/499] LADY (DdF-u3fe5pg)
+  ✓ タイトル: 米津玄師  Kenshi Yonezu - LADY
+  ✓ アーティスト: 米津玄師  Kenshi Yonezu
+
+  休憩中... (460/499)
+
+[461/499] 白日 (ony539T074w)
+  ✓ タイトル: King Gnu - 白日
+  ✓ アーティスト: King Gnu
+[462/499] 青のすみか (E_7-XHjgPGw)
+  - タイトル: 青のすみか
+  - アーティスト名を抽出できませんでした
+[463/499] 残酷な天使のテーゼ (o6wtDPVkKqI)
+  - タイトル: 「残酷な天使のテーゼ」MUSIC VIDEO（HDver.）/Zankoku na Tenshi no Te-ze“The Cruel Angel&#39;s Thesis”
+  - アーティスト名を抽出できませんでした
+[464/499] 人マニア (HTxwOxFt5d4)
+  ✓ タイトル: 人マニア - 重音テト
+  ✓ アーティスト: 人マニア
+[465/499] 新宝島 (LIlZCmETvsY)
+  ✓ タイトル: サカナクション / 新宝島　-Music Video-
+  ✓ アーティスト: サカナクション
+[466/499] スノーマジックファンタジー (vkcTN70fnXA)
+  ✓ タイトル: SEKAI NO OWARI「スノーマジックファンタジー」
+  ✓ アーティスト: SEKAI NO OWARI
+[467/499] 僕らまた (hSdcy2_vtaQ)
+  ✓ タイトル: 僕らまた (Us, again) - SG (Official Lyric Video)
+  ✓ アーティスト: 僕らまた (Us, again)
+[468/499] 風になる (lHWVOfC41L4)
+  ✓ タイトル: つじあやの - 風になる（Music Video）
+  ✓ アーティスト: つじあやの
+[469/499] ともに (qag4ewos4TE)
+  ✓ タイトル: WANIMA - ともに (OFFICIAL VIDEO)
+  ✓ アーティスト: WANIMA
+[470/499] 世界に一つだけの花 (qZq-q75KeMw)
+  ✓ タイトル: 世界に一つだけの花 - SMAP
+  ✓ アーティスト: 世界に一つだけの花
+
+  休憩中... (470/499)
+
+[471/499] サチアレ (5VpK2Edk2Cw)
+  ✓ タイトル: なにわ男子 - サチアレ [Official Music Video] YouTube ver.
+  ✓ アーティスト: なにわ男子
+[472/499] Starting Over (dfbAAiL5ec8)
+  - タイトル: (Just Like) Starting Over (Ultimate Mix)
+  - アーティスト名を抽出できませんでした
+[473/499] わたしの一番かわいいところ (NQUo3vITjgY)
+  ✓ タイトル: 【MV】FRUITS ZIPPER「わたしの一番かわいいところ」
+  ✓ アーティスト: FRUITS ZIPPER
+[474/499] グラデーション (O2nEirNPXPM)
+  ✓ タイトル: SUPER BEAVER「グラデーション」MV  (映画『東京リベンジャーズ2 血のハロウィン編 -運命-』主題歌)
+  ✓ アーティスト: SUPER BEAVER
+[475/499] アイワナムチュー (OYSOYPRQsWs)
+  - タイトル: アイワナムチュー
+  - アーティスト名を抽出できませんでした
+[476/499] さよならエレジー (XSkpuDseenY)
+  - タイトル: 菅田将暉 『さよならエレジー』
+  - アーティスト名を抽出できませんでした
+[477/499] ヘビーローテーション (lkHlnWFnA0c)
+  ✓ タイトル: 【MV full】 ヘビーローテーション / AKB48 [公式]
+  ✓ アーティスト: ヘビーローテーション
+[478/499] 青春コンプレックス (c_SBnZZMXWs)
+  - タイトル: 青春コンプレックス
+  - アーティスト名を抽出できませんでした
+[479/499] Mela! (aRDURmIYBZ4)
+  ✓ タイトル: 緑黄色社会 『Mela!』Music Video / Ryokuoushoku Shakai – Mela!
+  ✓ アーティスト: 緑黄色社会 『Mela!』Music Video
+[480/499] やさしさに包まれたなら (PS_Bx7z2WeM)
+  ✓ タイトル: Embraced In Softness / Yasashisa Ni Tsutsumareta Nara (2022 Ｍix)
+  ✓ アーティスト: Embraced In Softness
+
+  休憩中... (480/499)
+
+[481/499] マーシャル・マキシマイザー (jMKPYg0uhCI)
+  ✓ タイトル: 柊マグネタイト - マーシャル・マキシマイザー / 可不
+  ✓ アーティスト: 柊マグネタイト
+[482/499] Magic (CN-Ja6jCweA)
+  ✓ タイトル: Mrs. GREEN APPLE「Magic」Official Music Video
+  ✓ アーティスト: Mrs. GREEN APPLE
+[483/499] サインはB (gzBYrrMengE)
+  - タイトル: サインはB -アイ Solo Ver.-
+  - アーティスト名を抽出できませんでした
+[484/499] スターマイン (YB_St-YN3Y8)
+  ✓ タイトル: Da-iCE / 「スターマイン」Music Video
+  ✓ アーティスト: Da-iCE /
+[485/499] 死ぬな！ (Z2wKQLY1XcQ)
+  ✓ タイトル: 死ぬな！ / こっちのけんと MV
+  ✓ アーティスト: 死ぬな！
+[486/499] 負けないで (_4DJkOUU648)
+  - タイトル: 「負けないで」Music Video
+  - アーティスト名を抽出できませんでした
+[487/499] 絆ノ奇跡 (Jb6Zlg30rgk)
+  ✓ タイトル: MAN WITH A MISSION×milet「絆ノ奇跡」Music Video
+  ✓ アーティスト: MAN WITH A MISSION×milet
+[488/499] Love so sweet (nivtoCT43gk)
+  - タイトル: Love so sweet
+  - アーティスト名を抽出できませんでした
+[489/499] 888月~夏にも程がある~ (rwgA7mVXcM0)
+  ✓ タイトル: リサイタルズ - ｢888月 〜夏にも程がある〜｣［Official Music Video］
+  ✓ アーティスト: リサイタルズ
+[490/499] 一途 (hm1na9R2uYA)
+  ✓ タイトル: King Gnu - 一途
+  ✓ アーティスト: King Gnu
+
+  休憩中... (490/499)
+
+[491/499] ミックスナッツ (CbH2F0kXgTY)
+  ✓ タイトル: Official髭男dism - Mixed Nuts ［Official Video］
+  ✓ アーティスト: Official髭男dism
+[492/499] RPG (Mi9uNu35Gmk)
+  ✓ タイトル: SEKAI NO OWARI「RPG」
+  ✓ アーティスト: SEKAI NO OWARI
+[493/499] ひまわりの約束 (rKsQ-3N-Bks)
+  ✓ タイトル: 秦 基博 - 「ひまわりの約束」 Music Video
+  ✓ アーティスト: 秦 基博
+[494/499] キセキ (DwTinTO0o9I)
+  ✓ タイトル: GReeeeN - キセキ
+  ✓ アーティスト: GReeeeN
+[495/499] 怪獣の花唄 (UM9XNpgrqVk)
+  ✓ タイトル: 怪獣の花唄 / Vaundy ： MUSIC VIDEO
+  ✓ アーティスト: 怪獣の花唄
+[496/499] 天体観測 (j7CDb610Bg0)
+  ✓ タイトル: BUMP OF CHICKEN「天体観測」
+  ✓ アーティスト: BUMP OF CHICKEN
+[497/499] Baby you (7rVDbNC8Qt8)
+  ✓ タイトル: 有華「Baby you」Music Video(Yuka Ver.)
+  ✓ アーティスト: 有華
+[498/499] Overdose (H08YWE4CIFQ)
+  ✓ タイトル: なとり - Overdose
+  ✓ アーティスト: なとり
+[499/499] メフィスト (Yo83M-KOc7k)
+  - タイトル: 女王蜂『メフィスト(Mephisto)』Official MV
+  - アーティスト名を抽出できませんでした
+
+結果: 335/499曲にアーティスト名を追加しました
+✓ キャッシュを更新しました
+
+ランキングを再計算中...
+✓ ランキングを保存しました
+
+============================================================
+完了！次のコマンドでCSVを生成してください:
+  python3 json_to_csv.py
+============================================================
