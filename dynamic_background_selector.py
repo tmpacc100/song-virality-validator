@@ -120,7 +120,7 @@ class DynamicBackgroundSelector:
         return self.template
 
     def _update_background_layer(self, new_background_path):
-        """テンプレート内の背景レイヤーのパスを更新
+        """テンプレート内のimageレイヤーのパスを更新
 
         Args:
             new_background_path: 新しい背景画像のパス
@@ -128,19 +128,20 @@ class DynamicBackgroundSelector:
         # layers_ordered形式（新形式）
         if 'layers_ordered' in self.template:
             for layer in self.template['layers_ordered']:
-                if layer['type'] == 'background':
+                if layer['type'] == 'image' and layer.get('name') == 'image_1':
                     old_path = layer.get('path', '')
                     layer['path'] = new_background_path
-                    print(f"  背景レイヤー更新: {os.path.basename(old_path)} → {os.path.basename(new_background_path)}")
+                    print(f"  imageレイヤー更新: {os.path.basename(old_path)} → {os.path.basename(new_background_path)}")
                     break
 
         # layers形式（旧形式）
-        elif 'layers' in self.template and 'background' in self.template['layers']:
-            for layer in self.template['layers']['background']:
-                old_path = layer.get('path', '')
-                layer['path'] = new_background_path
-                print(f"  背景レイヤー更新: {os.path.basename(old_path)} → {os.path.basename(new_background_path)}")
-                break
+        elif 'layers' in self.template and 'image' in self.template['layers']:
+            for layer in self.template['layers']['image']:
+                if layer.get('name') == 'image_1':
+                    old_path = layer.get('path', '')
+                    layer['path'] = new_background_path
+                    print(f"  imageレイヤー更新: {os.path.basename(old_path)} → {os.path.basename(new_background_path)}")
+                    break
 
     def create_template_for_song(self, song_data, taiko_data=None, output_path='template_generated.json'):
         """曲データから専用テンプレートを生成

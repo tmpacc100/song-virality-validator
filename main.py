@@ -1370,7 +1370,8 @@ def generate_videos():
     print("動画生成")
     print("="*60)
     print("1. 単一動画生成")
-    print("2. バッチ動画生成（CSVから）")
+    print("2. バッチ動画生成（CSVから - 固定背景）")
+    print("3. バッチ動画生成（CSVから - 動的背景選択）")
     print("0. 戻る")
 
     choice = input("\n選択: ").strip()
@@ -1450,6 +1451,55 @@ def generate_videos():
         import subprocess
         print(f"\n{csv_file}から動画を生成しています...")
         subprocess.run(['python3', 'batch_video_generator_layers.py', csv_file])
+
+    elif choice == '3':
+        # 動的背景選択付きバッチ生成
+        csv_file = input("CSVファイルパス (デフォルト: filtered data/taiko_server_未投稿_filtered.csv): ").strip()
+        if not csv_file:
+            csv_file = 'filtered data/taiko_server_未投稿_filtered.csv'
+
+        if not os.path.exists(csv_file):
+            print(f"エラー: {csv_file} が見つかりません")
+            return
+
+        output_dir = input("出力ディレクトリ (デフォルト: output_videos): ").strip()
+        if not output_dir:
+            output_dir = 'output_videos'
+
+        print("\n処理オプション:")
+        id_match_only = input("曲IDにマッチする動画がある曲のみ処理しますか? (y/n, デフォルト: n): ").strip().lower() == 'y'
+
+        print("\n動的背景選択オプション:")
+        print("  - サムネイル分析: YouTubeサムネイルの色を分析して最適な背景色を自動選択")
+        print("  - カテゴリー考慮: 曲のタグ（ボカロ、アニメなど）から推奨色を使用")
+        print()
+
+        use_thumbnail = input("サムネイル分析を使用しますか？ (y/n, デフォルト: y): ").strip().lower()
+        use_thumbnail = use_thumbnail != 'n'
+
+        use_category = input("カテゴリーも考慮しますか？ (y/n, デフォルト: y): ").strip().lower()
+        use_category = use_category != 'n'
+
+        print(f"\n{csv_file}から動画を生成しています（動的背景選択付き）...")
+        print("処理には時間がかかる場合があります...")
+
+        from batch_video_with_dynamic_bg import DynamicBackgroundBatchGenerator
+        try:
+            generator = DynamicBackgroundBatchGenerator()
+            videos = generator.generate_from_csv_with_dynamic_bg(
+                csv_file,
+                output_dir,
+                use_video_analysis=use_thumbnail,
+                use_category=use_category,
+                include_artist=True,
+                id_match_only=id_match_only
+            )
+            print(f"\n✅ 完了: {len(videos)}本の動画を生成しました")
+        except Exception as e:
+            print(f"\nエラーが発生しました: {e}")
+            import traceback
+            traceback.print_exc()
+
     elif choice != '0':
         print("無効な選択です")
 

@@ -320,14 +320,9 @@ class LayerBasedTextGenerator:
                                 pattern_draw.text((px, py), char, font=small_font,
                                                 fill=(255, 255, 255, alpha))
 
-                        # 白い塗りつぶし画像を作成（ベース）
-                        white_fill = Image.new('RGBA', (mask_w, mask_h), (255, 255, 255, 255))
-
-                        # パターンを白背景に合成
-                        white_fill = Image.alpha_composite(white_fill, pattern_img)
-
-                        # compositeに合成背景を貼り付け
-                        composite.paste(white_fill, (int(text_x), int(current_y)), mask_image)
+                        # パターン画像をそのまま使用（白背景なし）
+                        # compositeにパターンを貼り付け
+                        composite.paste(pattern_img, (int(text_x), int(current_y)), mask_image)
                 except Exception as e:
                     print(f"警告: パターン背景の描画に失敗しました: {e}")
                 # === 新規追加ここまで ===

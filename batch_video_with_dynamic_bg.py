@@ -38,7 +38,8 @@ class DynamicBackgroundBatchGenerator:
     def generate_from_csv_with_dynamic_bg(self, csv_path, output_dir='output',
                                            use_video_analysis=True,
                                            use_category=True,
-                                           include_artist=True):
+                                           include_artist=True,
+                                           id_match_only=False):
         """CSVから動画を一括生成（動的背景選択付き）
 
         Args:
@@ -47,6 +48,7 @@ class DynamicBackgroundBatchGenerator:
             use_video_analysis: YouTubeサムネイル分析を使用するか
             use_category: カテゴリー（タグ）を考慮するか
             include_artist: アーティスト名を含めるか
+            id_match_only: Trueの場合、曲IDにマッチする動画がある曲のみ処理
 
         Returns:
             生成された動画のリスト
@@ -58,6 +60,35 @@ class DynamicBackgroundBatchGenerator:
             reader = csv.DictReader(f)
             rows = list(reader)
 
+        # 曲IDマッチングフィルタリング
+        video_source_dir = 'output'
+        skipped_count = 0
+        filtered_rows = []
+
+        if id_match_only:
+            for row in rows:
+                song_id = row.get('id', '').strip()
+                if song_id:
+                    # 曲IDに対応する動画ファイルが存在するかチェック
+                    id_video_found = False
+                    for ext in ['.mp4', '.MP4']:
+                        song_id_video_path = os.path.join(video_source_dir, f"{song_id}{ext}")
+                        if os.path.exists(song_id_video_path):
+                            id_video_found = True
+                            break
+
+                    if id_video_found:
+                        filtered_rows.append(row)
+                    else:
+                        skipped_count += 1
+                else:
+                    # IDがない場合はスキップ
+                    skipped_count += 1
+
+            rows = filtered_rows
+            if skipped_count > 0:
+                print(f"\n⚠ 曲IDマッチングでスキップされた曲: {skipped_count}曲")
+
         total = len(rows)
         generated_videos = []
 
@@ -67,6 +98,7 @@ class DynamicBackgroundBatchGenerator:
         print(f"総曲数: {total}曲")
         print(f"サムネイル分析: {'有効' if use_video_analysis else '無効'}")
         print(f"カテゴリー考慮: {'有効' if use_category else '無効'}")
+        print(f"曲IDマッチング: {'有効' if id_match_only else '無効'}")
         print(f"{'='*60}\n")
 
         for idx, row in enumerate(rows):
@@ -98,27 +130,41 @@ class DynamicBackgroundBatchGenerator:
 
             # 背景を動的に選択してテンプレートを更新
             try:
-                if use_video_analysis and use_category and video_id and tags:
-                    # ハイブリッド方式
-                    print("背景選択方式: ハイブリッド（サムネイル分析 + カテゴリー）")
-                    self.background_selector.update_background_by_hybrid(
-                        video_id, tags, self.template_path
-                    )
+                # ハイブリッド方式: サムネイル分析とカテゴリーの両方を使用
+                if use_video_analysis and use_category:
+                    if video_id and tags:
+                        print("背景選択方式: ハイブリッド（サムネイル分析 + カテゴリー）")
+                        self.background_selector.update_background_by_hybrid(
+                            video_id, tags, self.template_path
+                        )
+                    elif video_id:
+                        print("背景選択方式: サムネイル分析（タグなし）")
+                        self.background_selector.update_background_by_video_id(
+                            video_id, self.template_path
+                        )
+                    elif tags:
+                        print("背景選択方式: カテゴリーベース（動画IDなし）")
+                        print(f"  タグ: {tags}")
+                        self.background_selector.update_background_by_tags(
+                            tags, self.template_path
+                        )
+                    else:
+                        print("背景選択方式: デフォルト（動画ID・タグなし）")
+                # サムネイル分析のみ
                 elif use_video_analysis and video_id:
-                    # サムネイル分析のみ
-                    print("背景選択方式: サムネイル分析")
+                    print("背景選択方式: サムネイル分析のみ")
                     self.background_selector.update_background_by_video_id(
                         video_id, self.template_path
                     )
+                # カテゴリーのみ
                 elif use_category and tags:
-                    # カテゴリーのみ
-                    print("背景選択方式: カテゴリーベース")
+                    print("背景選択方式: カテゴリーベースのみ")
                     print(f"  タグ: {tags}")
                     self.background_selector.update_background_by_tags(
                         tags, self.template_path
                     )
                 else:
-                    print("背景選択方式: デフォルト（変更なし）")
+                    print("背景選択方式: デフォルト（機能が無効またはデータなし）")
                     # デフォルト背景を使用（テンプレートを変更しない）
 
             except Exception as e:
