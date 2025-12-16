@@ -275,9 +275,10 @@ class LayerBasedTextGenerator:
                 # 水平中央揃え
                 text_x = x + (w - line_width) // 2
 
-                # === 新規追加: 文字の内側に白背景を描画 ===
+                # === 新規追加: 文字の内側に小さい文字パターンを描画 ===
                 try:
                     import numpy as np
+                    import random
                     # テキストマスクを取得
                     mask = font.getmask(line)
                     if mask.size[0] > 0 and mask.size[1] > 0:
@@ -289,17 +290,50 @@ class LayerBasedTextGenerator:
                         mask_array = np.array(mask).reshape(mask_h, mask_w)
                         mask_image = Image.fromarray(mask_array, mode='L')
 
-                        # 白い塗りつぶし画像を作成
+                        # 小さい文字パターンを描画する画像を作成
+                        pattern_img = Image.new('RGBA', (mask_w, mask_h), (255, 255, 255, 0))
+                        pattern_draw = ImageDraw.Draw(pattern_img)
+
+                        # 小さいフォントサイズ（メインテキストの1/8くらい）
+                        small_font_size = max(8, font_size // 8)
+                        try:
+                            small_font = ImageFont.truetype(working_font_path, small_font_size)
+                        except:
+                            small_font = font
+
+                        # ランダムに小さい文字を配置
+                        # 文字の種類（曲名やアーティスト名の文字を使用）
+                        chars = list(set(line))  # 重複を除いた文字リスト
+                        if not chars:
+                            chars = ['♪', '♫', '♬', '♭', '♯']  # デフォルト音楽記号
+
+                        # グリッド状に配置
+                        step_x = small_font_size
+                        step_y = small_font_size
+                        for py in range(0, mask_h, step_y):
+                            for px in range(0, mask_w, step_x):
+                                # ランダムに文字を選択
+                                char = random.choice(chars)
+                                # 透明度を調整（20-40%）
+                                alpha = random.randint(50, 100)
+                                # 白い小さい文字を描画
+                                pattern_draw.text((px, py), char, font=small_font,
+                                                fill=(255, 255, 255, alpha))
+
+                        # 白い塗りつぶし画像を作成（ベース）
                         white_fill = Image.new('RGBA', (mask_w, mask_h), (255, 255, 255, 255))
 
-                        # compositeに白背景を貼り付け
+                        # パターンを白背景に合成
+                        white_fill = Image.alpha_composite(white_fill, pattern_img)
+
+                        # compositeに合成背景を貼り付け
                         composite.paste(white_fill, (int(text_x), int(current_y)), mask_image)
                 except Exception as e:
-                    print(f"警告: 白背景の描画に失敗しました: {e}")
+                    print(f"警告: パターン背景の描画に失敗しました: {e}")
                 # === 新規追加ここまで ===
 
-                # 縁取り（黒）
-                outline_width = max(2, font_size // 30)
+                # 縁取り（黒）- ボールド強調版
+                outline_width = max(4, font_size // 15)  # 元の2倍の太さ
                 for dx in range(-outline_width, outline_width + 1):
                     for dy in range(-outline_width, outline_width + 1):
                         if dx != 0 or dy != 0:
@@ -520,8 +554,8 @@ class LayerBasedTextGenerator:
                     print(f"警告: 白背景の描画に失敗しました: {e}")
                 # === 新規追加ここまで ===
 
-                # 縁取り（黒）
-                outline_width = max(2, font_size // 30)
+                # 縁取り（黒）- ボールド強調版
+                outline_width = max(4, font_size // 15)  # 元の2倍の太さ
                 for dx in range(-outline_width, outline_width + 1):
                     for dy in range(-outline_width, outline_width + 1):
                         if dx != 0 or dy != 0:

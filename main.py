@@ -590,6 +590,7 @@ def process_songs_from_csv(csv_file, use_cache=True, force_refresh=False):
             for row in reader:
                 # TaikoGameのCSV形式に対応 (song_name列を使用)
                 song_name = row.get('song_name', '').strip()
+                release_date = row.get('release_date', '').strip()  # ML/RLスケジューリング用
                 if not song_name:
                     continue
 
@@ -700,6 +701,7 @@ def process_songs_from_csv(csv_file, use_cache=True, force_refresh=False):
                 song_data = {
                     'song_name': song_name,
                     'artist_name': artist_name,
+                    'release_date': release_date,  # ML/RLスケジューリング用
                     'video_id': video_id,
                     **stats
                 }
@@ -932,6 +934,7 @@ def save_rankings(rankings):
                 'artist_name': song.get('artist_name', ''),
                 'video_id': song['video_id'],
                 'video_title': song.get('video_title', ''),
+                'release_date': song.get('release_date', ''),  # ML/RL用
                 'metrics': {
                     'view_count': song['view_count'],
                     'like_count': song['like_count'],
@@ -939,6 +942,11 @@ def save_rankings(rankings):
                     'comment_count': song['comment_count'],
                     'growth_rate': round(song['growth_rate'], 1),
                     'days_since_published': song['days_since_published']
+                },
+                'ml_predictions': {  # ML/RL予測結果
+                    'optimal_posting_datetime': song.get('optimal_posting_datetime', ''),
+                    'predicted_view_count': song.get('predicted_view_count', 0),
+                    'confidence_score': round(song.get('confidence_score', 0.0), 3)
                 }
             }
             for i, song in enumerate(ranked_songs)
@@ -1157,13 +1165,16 @@ def export_single_ranking(ranking_type):
     with open(filename, 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([
-            '順位', 'アーティスト名', '曲名', '動画タイトル', 'Video ID', '再生数', '高評価数',
-            '支持率(%)', 'コメント数', '急上昇度(views/day)', '公開日数'
+            '順位', 'release_date', 'アーティスト名', '曲名', '動画タイトル', 'Video ID', '再生数', '高評価数',
+            '支持率(%)', 'コメント数', '急上昇度(views/day)', '公開日数',
+            '最適投稿日時', '予測視聴数', '信頼度スコア'
         ])
 
         for item in rankings[ranking_type]:
+            ml_pred = item.get('ml_predictions', {})
             writer.writerow([
                 item['rank'],
+                item.get('release_date', ''),
                 item.get('artist_name', ''),
                 item['song_name'],
                 item.get('video_title', ''),
@@ -1173,7 +1184,10 @@ def export_single_ranking(ranking_type):
                 item['metrics']['support_rate'],
                 item['metrics']['comment_count'],
                 item['metrics']['growth_rate'],
-                item['metrics']['days_since_published']
+                item['metrics']['days_since_published'],
+                ml_pred.get('optimal_posting_datetime', ''),
+                ml_pred.get('predicted_view_count', ''),
+                ml_pred.get('confidence_score', '')
             ])
 
     print(f"\n{filename} を作成しました ({len(rankings[ranking_type])}曲)")
@@ -1212,7 +1226,9 @@ def export_all_rankings():
                     'artist_name': item.get('artist_name', ''),
                     'video_title': item.get('video_title', ''),
                     'video_id': item['video_id'],
+                    'release_date': item.get('release_date', ''),  # ML/RL用
                     'metrics': item['metrics'],
+                    'ml_predictions': item.get('ml_predictions', {}),  # ML/RL予測結果
                     'ranks': {}
                 }
             all_songs[song_name]['ranks'][metric_key] = item['rank']
@@ -1221,11 +1237,12 @@ def export_all_rankings():
 
     with open(filename, 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        # IDカラムを先頭に追加
+        # IDカラムを先頭に追加、ML/RL列を追加
         writer.writerow([
-            'id', 'アーティスト名', '曲名', '動画タイトル', 'Video ID', '再生数', '高評価数', '支持率(%)',
+            'id', 'release_date', 'アーティスト名', '曲名', '動画タイトル', 'Video ID', '再生数', '高評価数', '支持率(%)',
             'コメント数', '急上昇度(views/day)', '公開日数',
-            '人気度順位', '支持率順位', 'エンゲージメント順位', '急上昇度順位', '総合順位'
+            '人気度順位', '支持率順位', 'エンゲージメント順位', '急上昇度順位', '総合順位',
+            '最適投稿日時', '予測視聴数', '信頼度スコア'
         ])
 
         sorted_songs = sorted(
@@ -1239,8 +1256,10 @@ def export_all_rankings():
             if song_id:
                 matched_count += 1
 
+            ml_pred = data.get('ml_predictions', {})
             writer.writerow([
                 song_id,  # 曲IDを先頭に追加
+                data.get('release_date', ''),  # release_date追加
                 data.get('artist_name', ''),
                 song_name,
                 data.get('video_title', ''),
@@ -1255,7 +1274,10 @@ def export_all_rankings():
                 data['ranks'].get('support_rate', '-'),
                 data['ranks'].get('engagement', '-'),
                 data['ranks'].get('growth_rate', '-'),
-                data['ranks'].get('overall', '-')
+                data['ranks'].get('overall', '-'),
+                ml_pred.get('optimal_posting_datetime', ''),  # ML/RL: 最適投稿日時
+                ml_pred.get('predicted_view_count', ''),  # ML/RL: 予測視聴数
+                ml_pred.get('confidence_score', '')  # ML/RL: 信頼度スコア
             ])
 
     print(f"\n{filename} を作成しました (全{len(all_songs)}曲)")
@@ -1521,6 +1543,215 @@ def fetch_taikogame_to_csv():
     print("="*60)
 
 
+def ml_rl_schedule_optimization():
+    """10. ML/RLスケジュール最適化"""
+    print("\n" + "="*60)
+    print("🤖 ML/RLスケジュール最適化")
+    print("="*60)
+
+    # 必要なモジュールをインポート
+    try:
+        from feature_engineering import FeatureEngineer
+        from ml_scheduler import ViewCountPredictor
+        from rl_scheduler import optimize_schedule
+    except ImportError as e:
+        print(f"\nエラー: 必要なモジュールをインポートできません: {e}")
+        print("requirements.txtの依存関係をインストールしてください:")
+        print("  pip install -r requirements.txt")
+        return
+
+    # 1. データ読み込み
+    print("\n" + "-"*60)
+    print("ステップ1: データ読み込み")
+    print("-"*60)
+
+    if not os.path.exists(RANKINGS_FILE):
+        print(f"エラー: {RANKINGS_FILE} が見つかりません")
+        print("先にオプション1で新動画fetchを実行してください")
+        return
+
+    with open(RANKINGS_FILE, 'r', encoding='utf-8') as f:
+        rankings = json.load(f)
+
+    # 全曲データを取得（overallランキングから）
+    if 'overall' not in rankings:
+        print("エラー: overallランキングが見つかりません")
+        return
+
+    songs_data = []
+    for item in rankings['overall']:
+        song = {
+            'song_name': item['song_name'],
+            'artist_name': item.get('artist_name', ''),
+            'video_id': item['video_id'],
+            'release_date': item.get('release_date', ''),
+            'view_count': item['metrics']['view_count'],
+            'like_count': item['metrics']['like_count'],
+            'comment_count': item['metrics']['comment_count'],
+            'support_rate': item['metrics']['support_rate'],
+            'growth_rate': item['metrics']['growth_rate'],
+            'days_since_published': item['metrics']['days_since_published']
+        }
+        songs_data.append(song)
+
+    print(f"✓ {len(songs_data)}曲のデータを読み込みました")
+
+    # TaikoGameデータを読み込み（タグ情報用）
+    taiko_data_map = {}
+    taiko_csv = 'filtered data/taiko_server_未投稿_filtered.csv'
+    if os.path.exists(taiko_csv):
+        try:
+            import csv
+            with open(taiko_csv, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    song_name = row.get('song_name', '').strip()
+                    if song_name:
+                        taiko_data_map[song_name] = row
+            print(f"✓ TaikoGameデータ {len(taiko_data_map)}曲を読み込みました")
+        except Exception as e:
+            print(f"警告: TaikoGameデータ読み込みエラー: {e}")
+
+    # 2. 特徴量エンジニアリング
+    print("\n" + "-"*60)
+    print("ステップ2: 特徴量エンジニアリング")
+    print("-"*60)
+
+    engineer = FeatureEngineer()
+    target_datetime = datetime.datetime.now()
+
+    try:
+        X, y, feature_names = engineer.prepare_training_data(
+            songs_data,
+            taiko_data_map,
+            target_datetime
+        )
+        print(f"✓ 特徴量を生成しました")
+        print(f"  - サンプル数: {len(X)}")
+        print(f"  - 特徴量数: {len(feature_names)}")
+    except Exception as e:
+        print(f"エラー: 特徴量生成に失敗しました: {e}")
+        import traceback
+        traceback.print_exc()
+        return
+
+    # 3. ML View Predictor訓練
+    print("\n" + "-"*60)
+    print("ステップ3: Deep Learning視聴数予測モデル訓練")
+    print("-"*60)
+
+    try:
+        predictor = ViewCountPredictor(input_dim=X.shape[1])
+
+        # モデル訓練
+        predictor.train(
+            X, y,
+            epochs=100,
+            validation_split=0.2,
+            use_augmentation=True,
+            verbose=1
+        )
+
+        # モデル保存
+        predictor.save()
+
+        print("\n✓ ML予測モデルの訓練が完了しました")
+
+    except Exception as e:
+        print(f"エラー: ML訓練に失敗しました: {e}")
+        import traceback
+        traceback.print_exc()
+        return
+
+    # 4. RLスケジュール最適化
+    print("\n" + "-"*60)
+    print("ステップ4: Reinforcement Learningスケジュール最適化")
+    print("-"*60)
+
+    try:
+        # 最適スケジュールを生成
+        optimized_schedule = optimize_schedule(
+            songs_data=songs_data,
+            view_predictor=predictor,
+            num_episodes=500
+        )
+
+        print(f"\n✓ 最適スケジュールを生成しました: {len(optimized_schedule)}曲")
+
+    except Exception as e:
+        print(f"エラー: RL最適化に失敗しました: {e}")
+        import traceback
+        traceback.print_exc()
+        return
+
+    # 5. 結果を反映
+    print("\n" + "-"*60)
+    print("ステップ5: 結果をrankings.jsonに反映")
+    print("-"*60)
+
+    # 曲名 -> ML予測結果のマッピング
+    ml_results_map = {}
+    for song, posting_datetime, predicted_views, confidence in optimized_schedule:
+        ml_results_map[song['song_name']] = {
+            'optimal_posting_datetime': posting_datetime.strftime('%Y-%m-%d %H:%M:%S'),
+            'predicted_view_count': int(predicted_views),
+            'confidence_score': float(confidence)
+        }
+
+    # rankings.jsonを更新
+    updated_count = 0
+    for metric_key in rankings:
+        for item in rankings[metric_key]:
+            song_name = item['song_name']
+            if song_name in ml_results_map:
+                # ML予測結果を追加
+                if 'ml_predictions' not in item:
+                    item['ml_predictions'] = {}
+                item['ml_predictions'].update(ml_results_map[song_name])
+
+                # song_data自体にも追加（後方互換性のため）
+                item['optimal_posting_datetime'] = ml_results_map[song_name]['optimal_posting_datetime']
+                item['predicted_view_count'] = ml_results_map[song_name]['predicted_view_count']
+                item['confidence_score'] = ml_results_map[song_name]['confidence_score']
+                updated_count += 1
+
+    # rankings.jsonを保存
+    with open(RANKINGS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(rankings, f, ensure_ascii=False, indent=2)
+
+    print(f"✓ {RANKINGS_FILE} を更新しました（{updated_count}件）")
+
+    # 6. 結果サマリー表示
+    print("\n" + "="*60)
+    print("📊 最適化結果サマリー")
+    print("="*60)
+
+    total_predicted_views = sum(predicted_views for _, _, predicted_views, _ in optimized_schedule)
+    avg_confidence = sum(confidence for _, _, _, confidence in optimized_schedule) / len(optimized_schedule)
+
+    print(f"\n処理曲数: {len(optimized_schedule)}曲")
+    print(f"総予測視聴回数: {total_predicted_views:,.0f} views")
+    print(f"平均信頼度: {avg_confidence*100:.1f}%")
+
+    # 今週の投稿スケジュール（上位10件）
+    print("\n今週の推奨投稿スケジュール（予測視聴数トップ10）:")
+    sorted_schedule = sorted(
+        optimized_schedule,
+        key=lambda x: x[2],  # predicted_views is the 3rd element
+        reverse=True
+    )[:10]
+
+    for i, (song, posting_datetime, predicted_views, confidence) in enumerate(sorted_schedule, 1):
+        print(f"  {i}. {posting_datetime.strftime('%Y-%m-%d %H:%M')} - 「{song['song_name']}」{song.get('artist_name', '')}")
+        print(f"     予測: {predicted_views:,.0f} views (信頼度: {confidence*100:.0f}%)")
+
+    # CSV再出力を推奨
+    print("\n" + "="*60)
+    print("💡 次のステップ:")
+    print("  - オプション3でCSVを再出力すると、ML/RL結果が反映されます")
+    print("="*60)
+
+
 def open_template():
     """9. テンプレート編集"""
     import subprocess
@@ -1556,6 +1787,7 @@ def main():
         print("7. iTunes APIで全曲アーティスト更新")
         print("8. TaikoGameデータ取得・CSV保存")
         print("9. テンプレート編集")
+        print("10. 🤖 ML/RLスケジュール最適化")
         print("0. 終了")
 
         choice = input("\n選択: ").strip()
@@ -1578,11 +1810,13 @@ def main():
             fetch_taikogame_to_csv()
         elif choice == '9':
             open_template()
+        elif choice == '10':
+            ml_rl_schedule_optimization()
         elif choice == '0':
             print("\n終了します")
             break
         else:
-            print("\n無効な選択です。0-9 のいずれかを入力してください。")
+            print("\n無効な選択です。0-10 のいずれかを入力してください。")
 
 
 if __name__ == '__main__':

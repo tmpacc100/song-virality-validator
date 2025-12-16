@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+"""
+動的背景選択付きバッチ動画生成
+各曲のYouTubeサムネイル色とカテゴリーに基づいて
+自動的に最適な背景色を選択して動画を生成
+"""
+
+import csv
+import os
+import json
+from batch_video_generator_layers import LayerBasedBatchVideoGenerator
+from dynamic_background_selector import DynamicBackgroundSelector
+
+
+class DynamicBackgroundBatchGenerator:
+    """動的背景選択機能付きバッチ動画生成"""
+
+    def __init__(self, template_path='template.json', base_video='base.mp4'):
+        self.template_path = template_path
+        self.base_video = base_video
+        self.background_selector = DynamicBackgroundSelector(template_path)
+
+        # 元のテンプレートをバックアップ
+        self.original_template_path = f"{template_path}.backup"
+        if not os.path.exists(self.original_template_path):
+            with open(template_path, 'r') as src:
+                with open(self.original_template_path, 'w') as dst:
+                    dst.write(src.read())
+            print(f"✓ テンプレートバックアップ作成: {self.original_template_path}")
+
+    def _restore_original_template(self):
+        """元のテンプレートを復元"""
+        if os.path.exists(self.original_template_path):
+            with open(self.original_template_path, 'r') as src:
+                with open(self.template_path, 'w') as dst:
+                    dst.write(src.read())
+
+    def generate_from_csv_with_dynamic_bg(self, csv_path, output_dir='output',
+                                           use_video_analysis=True,
+                                           use_category=True,
+                                           include_artist=True):
+        """CSVから動画を一括生成（動的背景選択付き）
+
+        Args:
+            csv_path: CSVファイルのパス
+            output_dir: 出力ディレクトリ
+            use_video_analysis: YouTubeサムネイル分析を使用するか
+            use_category: カテゴリー（タグ）を考慮するか
+            include_artist: アーティスト名を含めるか
+
+        Returns:
+            生成された動画のリスト
+        """
+        os.makedirs(output_dir, exist_ok=True)
+
+        # CSVを読み込み
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
+
+        total = len(rows)
+        generated_videos = []
+
+        print(f"\n{'='*60}")
+        print(f"動的背景選択付きバッチ動画生成")
+        print(f"{'='*60}")
+        print(f"総曲数: {total}曲")
+        print(f"サムネイル分析: {'有効' if use_video_analysis else '無効'}")
+        print(f"カテゴリー考慮: {'有効' if use_category else '無効'}")
+        print(f"{'='*60}\n")
+
+        for idx, row in enumerate(rows):
+            artist = row.get('アーティスト名', row.get('artist_name', '')).strip()
+            song = row.get('曲名', row.get('song_name', '')).strip()
+            video_id = row.get('video_id', '').strip()
+            song_id = row.get('id', '').strip()
+
+            if not artist or not song:
+                print(f"[{idx + 1}/{total}] スキップ: アーティスト名または曲名が空")
+                continue
+
+            print(f"\n{'='*60}")
+            print(f"[{idx + 1}/{total}] {artist} - {song}")
+            if song_id:
+                print(f"曲ID: {song_id}")
+            if video_id:
+                print(f"動画ID: {video_id}")
+            print(f"{'='*60}")
+
+            # タグの取得
+            tags = []
+            tags_str = row.get('tags', '')
+            if tags_str:
+                try:
+                    tags = eval(tags_str) if tags_str else []
+                except:
+                    tags = []
+
+            # 背景を動的に選択してテンプレートを更新
+            try:
+                if use_video_analysis and use_category and video_id and tags:
+                    # ハイブリッド方式
+                    print("背景選択方式: ハイブリッド（サムネイル分析 + カテゴリー）")
+                    self.background_selector.update_background_by_hybrid(
+                        video_id, tags, self.template_path
+                    )
+                elif use_video_analysis and video_id:
+                    # サムネイル分析のみ
+                    print("背景選択方式: サムネイル分析")
+                    self.background_selector.update_background_by_video_id(
+                        video_id, self.template_path
+                    )
+                elif use_category and tags:
+                    # カテゴリーのみ
+                    print("背景選択方式: カテゴリーベース")
+                    print(f"  タグ: {tags}")
+                    self.background_selector.update_background_by_tags(
+                        tags, self.template_path
+                    )
+                else:
+                    print("背景選択方式: デフォルト（変更なし）")
+                    # デフォルト背景を使用（テンプレートを変更しない）
+
+            except Exception as e:
+                print(f"⚠ 背景選択エラー: {e}")
+                print("デフォルト背景を使用します")
+
+            # 動画を生成
+            try:
+                generator = LayerBasedBatchVideoGenerator(
+                    self.template_path,
+                    self.base_video
+                )
+                video_path = generator.generate_single_video(
+                    artist, song, output_dir,
+                    include_artist=include_artist,
+                    row=row
+                )
+
+                if video_path:
+                    generated_videos.append(video_path)
+                    print(f"✓ 動画生成完了: {video_path}")
+                else:
+                    print(f"✗ 動画生成失敗: {artist} - {song}")
+
+            except Exception as e:
+                print(f"✗ エラー: {artist} - {song}")
+                print(f"  {e}")
+                import traceback
+                traceback.print_exc()
+
+        # 処理完了後、元のテンプレートを復元
+        print(f"\n{'='*60}")
+        print("バッチ処理完了")
+        print(f"{'='*60}")
+        print(f"生成された動画: {len(generated_videos)}/{total}曲")
+        print(f"{'='*60}\n")
+
+        self._restore_original_template()
+        print(f"✓ テンプレートを元に戻しました: {self.template_path}")
+
+        return generated_videos
+
+
+def main():
+    """メイン実行"""
+    import sys
+
+    if len(sys.argv) < 2:
+        print("使用方法:")
+        print("  python batch_video_with_dynamic_bg.py <CSVファイル> [出力ディレクトリ]")
+        print()
+        print("例:")
+        print("  python batch_video_with_dynamic_bg.py ranking_all.csv output")
+        sys.exit(1)
+
+    csv_path = sys.argv[1]
+    output_dir = sys.argv[2] if len(sys.argv) > 2 else 'output'
+
+    if not os.path.exists(csv_path):
+        print(f"エラー: CSVファイルが見つかりません: {csv_path}")
+        sys.exit(1)
+
+    # バッチ生成実行
+    generator = DynamicBackgroundBatchGenerator()
+    videos = generator.generate_from_csv_with_dynamic_bg(
+        csv_path,
+        output_dir,
+        use_video_analysis=True,  # サムネイル分析を使用
+        use_category=True,         # カテゴリーも考慮
+        include_artist=True
+    )
+
+    print(f"\n✅ 完了: {len(videos)}本の動画を生成しました")
+
+
+if __name__ == '__main__':
+    main()
