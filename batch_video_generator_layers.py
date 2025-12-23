@@ -261,20 +261,21 @@ def main():
     print("レイヤー対応バッチ動画生成ツール")
     print("=" * 60)
 
-    if len(sys.argv) < 2:
-        print("\n使用方法:")
-        print("  python batch_video_generator_layers.py <csv_file> [base_video]")
-        print("\n例:")
-        print("  python batch_video_generator_layers.py songs.csv")
-        print("  python batch_video_generator_layers.py ranking_overall.csv base.mp4")
-        print("\nCSV形式:")
-        print("  artist_name,music_name")
-        print("  Ado,うっせぇわ")
-        print("  King Gnu,白日")
-        sys.exit(1)
+    # コマンドライン引数がある場合はそれを使用
+    if len(sys.argv) >= 2:
+        csv_path = sys.argv[1]
+        base_video = sys.argv[2] if len(sys.argv) > 2 else 'base.mp4'
+    else:
+        # 対話式で入力を受け取る
+        print("\n利用可能なCSVファイル:")
+        csv_files = [f for f in os.listdir('.') if f.endswith('.csv')]
+        for i, f in enumerate(csv_files, 1):
+            print(f"  {i}. {f}")
 
-    csv_path = sys.argv[1]
-    base_video = sys.argv[2] if len(sys.argv) > 2 else 'base.mp4'
+        csv_choice = input("\nCSVファイル名を入力 (デフォルト: ranking_all.csv): ").strip()
+        csv_path = csv_choice if csv_choice else 'ranking_all.csv'
+
+        base_video = input("ベース動画ファイル名 (デフォルト: base.mp4): ").strip() or 'base.mp4'
 
     # ファイルチェック
     if not os.path.exists(csv_path):

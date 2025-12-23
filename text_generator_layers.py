@@ -132,7 +132,8 @@ class LayerBasedTextGenerator:
                     bg_img = bg_img.resize((new_w, new_h), Image.Resampling.LANCZOS)
                     paste_x = x + (w - new_w) // 2
                     paste_y = y + (h - new_h) // 2
-                    composite.paste(bg_img, (paste_x, paste_y), bg_img)
+                    # アルファマスクを使用せず100%不透明で合成
+                    composite.paste(bg_img, (paste_x, paste_y))
 
                 elif layer_type == 'video' and path:
                     # 動画レイヤーはスキップ（動画生成時に実際の動画を合成）
@@ -157,7 +158,7 @@ class LayerBasedTextGenerator:
                     png_img = png_img.resize((new_w, new_h), Image.Resampling.LANCZOS)
                     paste_x = x + (w - new_w) // 2
                     paste_y = y + (h - new_h) // 2
-                    composite.paste(png_img, (paste_x, paste_y), png_img)
+                    composite.paste(png_img, (paste_x, paste_y))
 
         # 旧形式: background, video, images の順で合成（後方互換性）
         else:
@@ -170,7 +171,7 @@ class LayerBasedTextGenerator:
                         x, y = bg_layer.get('x', 0), bg_layer.get('y', 0)
                         w, h = bg_layer.get('w', self.canvas_w), bg_layer.get('h', self.canvas_h)
                         bg_img = bg_img.resize((w, h), Image.Resampling.LANCZOS)
-                        composite.paste(bg_img, (x, y), bg_img)
+                        composite.paste(bg_img, (x, y))
 
             # 2. 動画レイヤー（静止画として表示）
             for video_layer in self.layers.get('video', []):
@@ -196,7 +197,7 @@ class LayerBasedTextGenerator:
                         if w and h:
                             # テンプレートで指定されたサイズに直接リサイズ
                             png_img = png_img.resize((w, h), Image.Resampling.LANCZOS)
-                            composite.paste(png_img, (x, y), png_img)
+                            composite.paste(png_img, (x, y))
 
         # 4. テキストレイヤーを描画
         draw = ImageDraw.Draw(composite)
@@ -236,6 +237,9 @@ class LayerBasedTextGenerator:
             # 最適なフォントサイズを計算
             font_size = self.calculate_font_size(text, working_font_path, w, h, max_lines)
 
+            # フォントサイズを一回り小さく（90%）
+            font_size = int(font_size * 0.9)
+
             # フォントを読み込み
             if working_font_path:
                 try:
@@ -253,27 +257,43 @@ class LayerBasedTextGenerator:
             # 行間スペース
             line_spacing = font_size * 0.2
 
+            # 縁取り幅を計算（高さにも影響）
+            outline_width = max(4, font_size // 15)
+
             # まず全体の高さを計算して垂直中央を求める
             total_height = 0
             line_info = []
             for line in lines:
                 bbox = font.getbbox(line)
                 line_width = bbox[2] - bbox[0]
-                # 実際の描画高さはフォントサイズを基準にする（はみ出し防止）
-                line_height = font_size
-                line_info.append((line, line_width, line_height))
+                # 実際のテキストの高さ（アセンダー+ディセンダー+縁取り分）
+                line_height = bbox[3] - bbox[1] + (outline_width * 2)
+                # ベースライン調整用のオフセット（縁取り分を考慮）
+                baseline_offset = -bbox[1] + outline_width
+                line_info.append((line, line_width, line_height, baseline_offset))
                 total_height += line_height
 
             # 行間を追加
             total_height += line_spacing * (len(lines) - 1)
 
             # 垂直中央揃えの開始位置を計算
-            current_y = y + (h - total_height) // 2
+            # ただし、範囲からはみ出さないように制限
+            start_y = y + max(0, (h - total_height) // 2)
+            # 下にはみ出す場合は上に詰める
+            if start_y + total_height > y + h:
+                start_y = y + outline_width  # 上の縁取り分を確保
+            current_y = start_y
 
             # 各行を描画
-            for line, line_width, line_height in line_info:
-                # 水平中央揃え
-                text_x = x + (w - line_width) // 2
+            for line, line_width, line_height, baseline_offset in line_info:
+                # 範囲外にはみ出す場合はスキップ（縁取り分を考慮）
+                if current_y - outline_width < y or current_y + line_height - outline_width > y + h:
+                    current_y += line_height + line_spacing
+                    continue
+
+                # 水平中央揃え（縁取り分を考慮した実際の幅で中央配置）
+                actual_line_width = line_width + (outline_width * 2)
+                text_x = x + (w - actual_line_width) // 2 + outline_width
 
                 # === 新規追加: 文字の内側に小さい文字パターンを描画 ===
                 try:
@@ -321,22 +341,24 @@ class LayerBasedTextGenerator:
                                                 fill=(255, 255, 255, alpha))
 
                         # パターン画像をそのまま使用（白背景なし）
-                        # compositeにパターンを貼り付け
-                        composite.paste(pattern_img, (int(text_x), int(current_y)), mask_image)
+                        # compositeにパターンを貼り付け（ベースライン調整込み）
+                        composite.paste(pattern_img, (int(text_x), int(current_y + baseline_offset)), mask_image)
                 except Exception as e:
                     print(f"警告: パターン背景の描画に失敗しました: {e}")
                 # === 新規追加ここまで ===
 
-                # 縁取り（黒）- ボールド強調版
-                outline_width = max(4, font_size // 15)  # 元の2倍の太さ
+                # 実際の描画Y位置（ベースライン調整）
+                draw_y = current_y + baseline_offset
+
+                # 縁取り（黒）- ボールド強調版（outline_widthは上で計算済み）
                 for dx in range(-outline_width, outline_width + 1):
                     for dy in range(-outline_width, outline_width + 1):
                         if dx != 0 or dy != 0:
-                            draw.text((text_x + dx, current_y + dy), line,
+                            draw.text((text_x + dx, draw_y + dy), line,
                                     font=font, fill=(0, 0, 0, 255))
 
                 # メインテキスト（白）
-                draw.text((text_x, current_y), line, font=font, fill=(255, 255, 255, 255))
+                draw.text((text_x, draw_y), line, font=font, fill=(255, 255, 255, 255))
                 current_y += line_height + line_spacing
 
         # 画像を保存
@@ -441,7 +463,7 @@ class LayerBasedTextGenerator:
                         # 中央配置
                         paste_x = x + (w - new_w) // 2
                         paste_y = y + (h - new_h) // 2
-                        png_overlay.paste(png_img, (paste_x, paste_y), png_img)
+                        png_overlay.paste(png_img, (paste_x, paste_y))
 
         png_overlay.save(png_overlay_path, 'PNG')
         results['png_overlay'] = png_overlay_path
@@ -487,6 +509,9 @@ class LayerBasedTextGenerator:
             # 最適なフォントサイズを計算
             font_size = self.calculate_font_size(text, working_font_path, w, h, max_lines)
 
+            # フォントサイズを一回り小さく（90%）
+            font_size = int(font_size * 0.9)
+
             # フォントを読み込み
             if working_font_path:
                 try:
@@ -519,7 +544,12 @@ class LayerBasedTextGenerator:
             total_height += line_spacing * (len(lines) - 1)
 
             # 垂直中央揃えの開始位置を計算
-            current_y = y + (h - total_height) // 2
+            # ただし、範囲からはみ出さないように制限
+            start_y = y + max(0, (h - total_height) // 2)
+            # 下にはみ出す場合は上に詰める
+            if start_y + total_height > y + h:
+                start_y = y
+            current_y = start_y
 
             # 各行を描画
             for line, line_width, line_height in line_info:

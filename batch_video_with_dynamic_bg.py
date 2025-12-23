@@ -102,6 +102,9 @@ class DynamicBackgroundBatchGenerator:
         print(f"{'='*60}\n")
 
         for idx, row in enumerate(rows):
+            # 【修正】各曲の処理前に元のテンプレートを復元
+            self._restore_original_template()
+
             artist = row.get('アーティスト名', row.get('artist_name', '')).strip()
             song = row.get('曲名', row.get('song_name', '')).strip()
             video_id = row.get('video_id', '').strip()
@@ -212,20 +215,35 @@ def main():
     """メイン実行"""
     import sys
 
-    if len(sys.argv) < 2:
-        print("使用方法:")
-        print("  python batch_video_with_dynamic_bg.py <CSVファイル> [出力ディレクトリ]")
-        print()
-        print("例:")
-        print("  python batch_video_with_dynamic_bg.py ranking_all.csv output")
-        sys.exit(1)
+    # コマンドライン引数がある場合はそれを使用
+    if len(sys.argv) >= 2:
+        csv_path = sys.argv[1]
+        output_dir = sys.argv[2] if len(sys.argv) > 2 else 'output_videos'
+    else:
+        # 対話式で入力を受け取る
+        print("\n=== バッチ動画生成（CSVから - 動的背景選択） ===")
+        print("\n利用可能なCSVファイル:")
+        csv_files = [f for f in os.listdir('.') if f.endswith('.csv')]
+        for i, f in enumerate(csv_files, 1):
+            print(f"  {i}. {f}")
 
-    csv_path = sys.argv[1]
-    output_dir = sys.argv[2] if len(sys.argv) > 2 else 'output'
+        csv_choice = input("\nCSVファイル名を入力 (デフォルト: ranking_all.csv): ").strip()
+        csv_path = csv_choice if csv_choice else 'ranking_all.csv'
+
+        output_dir = input("出力ディレクトリ (デフォルト: output_videos): ").strip() or 'output_videos'
 
     if not os.path.exists(csv_path):
         print(f"エラー: CSVファイルが見つかりません: {csv_path}")
         sys.exit(1)
+
+    # オプション選択（対話式の場合のみ）
+    if len(sys.argv) < 2:
+        print("\n処理オプション:")
+        id_match_only = input("曲IDにマッチする動画がある曲のみ処理しますか? (y/n, デフォルト: n): ").strip().lower() == 'y'
+        include_artist = input("アーティスト名を含めますか? (y/n, デフォルト: y): ").strip().lower() != 'n'
+    else:
+        id_match_only = False
+        include_artist = True
 
     # バッチ生成実行
     generator = DynamicBackgroundBatchGenerator()
@@ -234,7 +252,8 @@ def main():
         output_dir,
         use_video_analysis=True,  # サムネイル分析を使用
         use_category=True,         # カテゴリーも考慮
-        include_artist=True
+        include_artist=include_artist,
+        id_match_only=id_match_only
     )
 
     print(f"\n✅ 完了: {len(videos)}本の動画を生成しました")

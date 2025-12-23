@@ -1,11 +1,12 @@
 import sys
 import json
+import os
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                                QHBoxLayout, QPushButton, QLabel, QSpinBox,
                                QFileDialog, QListWidget, QMessageBox, QListWidgetItem,
                                QCheckBox, QComboBox)
 from PySide6.QtCore import Qt, QRect, QPoint
-from PySide6.QtGui import QPainter, QPixmap, QPen, QColor, QFont, QBrush
+from PySide6.QtGui import QPainter, QPixmap, QPen, QColor, QFont, QBrush, QShortcut, QKeySequence
 
 
 class Layer:
@@ -377,6 +378,12 @@ class LayerEditorWindow(QMainWindow):
         # 縦長のキャンバス(1080x1920)に合わせてウィンドウサイズを調整
         self.setGeometry(100, 100, 1200, 1000)
 
+        # 設定ファイルのパス
+        self.config_file = os.path.join(os.path.dirname(__file__), '.template_editor_config.json')
+
+        # 現在のテンプレートファイルパスを記憶（設定ファイルから読み込む）
+        self.current_template_path = self.load_last_template_path()
+
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
 
@@ -395,6 +402,10 @@ class LayerEditorWindow(QMainWindow):
 
         # フォントリストを初期化
         self.initialize_font_list()
+
+        # キーボードショートカットを設定
+        save_shortcut = QShortcut(QKeySequence("Ctrl+S"), self)
+        save_shortcut.activated.connect(self.quick_save_template)
 
     def create_side_panel(self):
         """サイドパネルを作成"""
@@ -566,6 +577,11 @@ class LayerEditorWindow(QMainWindow):
         save_btn.setStyleSheet("font-size: 16px; padding: 10px; background-color: #4CAF50; color: white;")
         save_btn.clicked.connect(self.save_template)
         layout.addWidget(save_btn)
+
+        quick_save_btn = QPushButton("クイック保存 (Ctrl+S)")
+        quick_save_btn.setStyleSheet("font-size: 14px; padding: 8px; background-color: #FF9800; color: white;")
+        quick_save_btn.clicked.connect(self.quick_save_template)
+        layout.addWidget(quick_save_btn)
 
         # 説明
         info = QLabel("\n色の意味:\n"
@@ -852,8 +868,10 @@ class LayerEditorWindow(QMainWindow):
 
     def load_template(self):
         """テンプレートを読み込む"""
+        # 現在のテンプレートパスのディレクトリをデフォルトとして使用
+        default_dir = os.path.dirname(self.current_template_path)
         file_path, _ = QFileDialog.getOpenFileName(
-            self, "テンプレートを開く", "", "JSON Files (*.json)"
+            self, "テンプレートを開く", default_dir, "JSON Files (*.json)"
         )
 
         if not file_path:
@@ -863,17 +881,42 @@ class LayerEditorWindow(QMainWindow):
             with open(file_path, 'r', encoding='utf-8') as f:
                 template = json.load(f)
 
+            # 読み込んだパスを記憶
+            self.current_template_path = os.path.abspath(file_path)
+
+            # 最後に使用したテンプレートパスを設定ファイルに保存
+            self.save_last_template_path(self.current_template_path)
+
             # キャンバスをクリア
             self.canvas.layers.clear()
             self.layer_list.clear()
 
             # キャンバスサイズを設定
             if 'canvas' in template:
-                self.width_spin.setValue(template['canvas']['w'])
-                self.height_spin.setValue(template['canvas']['h'])
+                self.canvas.canvas_width = template['canvas'].get('w', 1080)
+                self.canvas.canvas_height = template['canvas'].get('h', 1920)
+                self.width_spin.setValue(self.canvas.canvas_width)
+                self.height_spin.setValue(self.canvas.canvas_height)
+                self.canvas.update()
 
-            # レイヤーを読み込む
-            if 'layers' in template:
+            # 新形式: layers_ordered（順序を保持した配列形式）
+            if 'layers_ordered' in template:
+                for layer_data in template['layers_ordered']:
+                    layer_type = layer_data.get('type')
+                    name = layer_data.get('name', f'{layer_type}_layer')
+                    x = layer_data.get('x', 0)
+                    y = layer_data.get('y', 0)
+                    w = layer_data.get('w', 100)
+                    h = layer_data.get('h', 100)
+                    visible = layer_data.get('visible', True)
+                    path = layer_data.get('path', '')
+
+                    layer = Layer(layer_type, name, x, y, w, h, path=path)
+                    layer.visible = visible
+                    self.canvas.add_layer(layer)
+
+            # 旧形式: layers（後方互換性のため残す）
+            elif 'layers' in template:
                 layers_data = template['layers']
 
                 # 背景レイヤー
@@ -894,12 +937,19 @@ class LayerEditorWindow(QMainWindow):
                     layer.visible = img.get('visible', True)
                     self.canvas.add_layer(layer)
 
-                # テキストレイヤー
-                for name, area in layers_data.get('text_areas', {}).items():
-                    layer = Layer('text', name, area['x'], area['y'], area['w'], area['h'], lines=area.get('lines', 3))
-                    self.canvas.add_layer(layer)
+            # テキストエリアを追加
+            for name, area in template.get('text_areas', {}).items():
+                layer = Layer('text', name, area['x'], area['y'], area['w'], area['h'], lines=area.get('lines', 3))
+                # フォント情報があれば復元
+                if 'font' in area:
+                    layer.font_path = area['font']
+                self.canvas.add_layer(layer)
 
             self.update_layer_list()
+
+            # ウィンドウタイトルを更新
+            self.setWindowTitle(f"レイヤー対応テンプレートエディタ - {os.path.basename(file_path)}")
+
             QMessageBox.information(self, "読み込み完了", f"テンプレートを読み込みました:\n{file_path}")
 
         except Exception as e:
@@ -907,12 +957,10 @@ class LayerEditorWindow(QMainWindow):
 
     def load_template_if_exists(self):
         """起動時にtemplate.jsonが存在する場合は自動的に読み込む"""
-        import os
-        template_path = 'template.json'
-
-        if os.path.exists(template_path):
+        # current_template_pathが既に設定されているので、それを使用
+        if os.path.exists(self.current_template_path):
             try:
-                with open(template_path, 'r', encoding='utf-8') as f:
+                with open(self.current_template_path, 'r', encoding='utf-8') as f:
                     template_data = json.load(f)
 
                 # キャンバスサイズを設定
@@ -949,10 +997,40 @@ class LayerEditorWindow(QMainWindow):
                     self.canvas.add_layer(layer)
 
                 self.update_layer_list()
-                print(f"テンプレートを読み込みました: {template_path}")
+
+                # ウィンドウタイトルを更新
+                self.setWindowTitle(f"レイヤー対応テンプレートエディタ - {os.path.basename(self.current_template_path)}")
+
+                print(f"テンプレートを読み込みました: {self.current_template_path}")
 
             except Exception as e:
                 print(f"テンプレートの読み込みに失敗しました: {e}")
+
+    def load_last_template_path(self):
+        """最後に使用したテンプレートパスを読み込む"""
+        default_path = os.path.abspath('template.json')
+
+        if os.path.exists(self.config_file):
+            try:
+                with open(self.config_file, 'r', encoding='utf-8') as f:
+                    config = json.load(f)
+                    last_path = config.get('last_template_path', default_path)
+                    # パスが存在する場合はそれを使用、存在しない場合はデフォルト
+                    if os.path.exists(last_path):
+                        return last_path
+            except:
+                pass
+
+        return default_path
+
+    def save_last_template_path(self, path):
+        """最後に使用したテンプレートパスを保存"""
+        try:
+            config = {'last_template_path': path}
+            with open(self.config_file, 'w', encoding='utf-8') as f:
+                json.dump(config, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"設定ファイルの保存に失敗しました: {e}")
 
     def initialize_font_list(self):
         """フォントリストを初期化"""
@@ -1018,17 +1096,56 @@ class LayerEditorWindow(QMainWindow):
 
         print(f"フォント変更: {layer.name} -> {font_name if font_name != 'デフォルト (RampartOne-Regular)' else 'デフォルト'}")
 
-    def save_template(self):
-        """テンプレートを保存"""
+    def quick_save_template(self):
+        """クイック保存（ダイアログなしで現在のファイルに上書き）"""
         template = self.canvas.export_template()
 
+        try:
+            # 現在のパスに直接保存
+            with open(self.current_template_path, 'w', encoding='utf-8') as f:
+                json.dump(template, f, ensure_ascii=False, indent=2)
+
+            # バックアップファイルも同時に更新
+            backup_path = f"{self.current_template_path}.backup"
+            with open(backup_path, 'w', encoding='utf-8') as f:
+                json.dump(template, f, ensure_ascii=False, indent=2)
+
+            print(f"✓ クイック保存完了: {self.current_template_path}")
+            print(f"✓ バックアップも更新: {backup_path}")
+
+            # ステータスバーに表示（3秒間）
+            self.statusBar().showMessage(f"✓ 保存完了: {os.path.basename(self.current_template_path)}", 3000)
+
+        except Exception as e:
+            QMessageBox.critical(self, "エラー", f"保存に失敗しました:\n{str(e)}")
+
+    def save_template(self):
+        """テンプレートを保存（名前を付けて保存）"""
+        template = self.canvas.export_template()
+
+        # 現在のテンプレートパスをデフォルトとして使用
         file_path, _ = QFileDialog.getSaveFileName(
-            self, "テンプレートを保存", "template.json", "JSON Files (*.json)"
+            self, "テンプレートを保存", self.current_template_path, "JSON Files (*.json)"
         )
 
         if file_path:
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(template, f, ensure_ascii=False, indent=2)
+
+            # バックアップファイルも同時に更新（動的背景生成での復元対策）
+            backup_path = f"{file_path}.backup"
+            with open(backup_path, 'w', encoding='utf-8') as f:
+                json.dump(template, f, ensure_ascii=False, indent=2)
+            print(f"✓ バックアップファイルも更新: {backup_path}")
+
+            # 保存したパスを記憶
+            self.current_template_path = os.path.abspath(file_path)
+
+            # 最後に使用したテンプレートパスを設定ファイルに保存
+            self.save_last_template_path(self.current_template_path)
+
+            # ウィンドウタイトルを更新
+            self.setWindowTitle(f"レイヤー対応テンプレートエディタ - {os.path.basename(file_path)}")
 
             QMessageBox.information(
                 self, "保存完了", f"テンプレートを保存しました:\n{file_path}"
