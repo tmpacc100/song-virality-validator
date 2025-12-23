@@ -37,10 +37,10 @@
   ],
   "text_areas": {
     "text_1": {
-      "x": 109,
+      "x": 75,
       "y": 166,
-      "w": 862,
-      "h": 292,
+      "w": 934,
+      "h": 300,
       "lines": 3,
       "font": "fonts/NotoSansJP-Bold.ttf"
     }

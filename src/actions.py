@@ -116,10 +116,10 @@ def generate_videos():
         else:
             print("Script not found: batch_video_generator_layers.py")
     elif choice == '3':
-        if os.path.exists('batch_video_with_dynamic_bg.py'):
-            subprocess.run(['python3', 'batch_video_with_dynamic_bg.py'])
+        if os.path.exists('test_color_rotation.py'):
+            subprocess.run(['python3', 'test_color_rotation.py'])
         else:
-            print("Script not found: batch_video_with_dynamic_bg.py")
+            print("Script not found: test_color_rotation.py")
     elif choice == '0':
         return
     else:
