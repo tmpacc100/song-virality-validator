@@ -136,7 +136,8 @@ class LayerBasedBatchVideoGenerator:
                 text_overlay_path=text_overlay_path,
                 output_path=output_video,
                 use_gpu=True,
-                codec='h264_videotoolbox'
+                codec='h264_videotoolbox',
+                gpu_preset='fast'  # M1最適化: fast プリセット使用
             )
         except Exception as e:
             print(f"GPU合成失敗、CPU合成を試行: {e}")

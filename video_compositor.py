@@ -47,7 +47,7 @@ class VideoCompositor:
 
     def compose_video(self, base_video, background_image_path, png_overlay_path,
                      text_overlay_path, output_path,
-                     use_gpu=True, codec='h264_videotoolbox'):
+                     use_gpu=True, codec='h264_videotoolbox', gpu_preset='medium'):
         """レイヤー順序に従って動画を合成
 
         Args:
@@ -115,14 +115,40 @@ class VideoCompositor:
         cmd.extend(['-map', '[out]'])  # 合成された映像
         cmd.extend(['-map', '1:a'])  # ベース動画の音声
 
-        # エンコード設定
+        # エンコード設定（高速化）
         if use_gpu:
             cmd.extend(['-c:v', codec])
-            cmd.extend(['-b:v', '8M'])  # ビットレート
+
+            # M1/M2/M3 VideoToolbox最適化設定
+            if codec == 'h264_videotoolbox':
+                # プリセット設定
+                preset_map = {
+                    'fast': ('8M', '10M', '16M'),
+                    'medium': ('6M', '8M', '12M'),
+                    'slow': ('5M', '7M', '10M')
+                }
+                bitrate, maxrate, bufsize = preset_map.get(gpu_preset, preset_map['medium'])
+
+                cmd.extend(['-b:v', bitrate])
+                cmd.extend(['-maxrate', maxrate])
+                cmd.extend(['-bufsize', bufsize])
+
+                # M1最適化: リアルタイムエンコーディング有効化
+                cmd.extend(['-realtime', '1'])
+
+                # プロファイル設定（互換性重視）
+                cmd.extend(['-profile:v', 'high'])
+                cmd.extend(['-level', '4.1'])
+            else:
+                # 他のGPUコーデック用のデフォルト設定
+                cmd.extend(['-b:v', '8M'])
+                cmd.extend(['-maxrate', '10M'])
+                cmd.extend(['-bufsize', '16M'])
         else:
             cmd.extend(['-c:v', 'libx264'])
-            cmd.extend(['-preset', 'fast'])
+            cmd.extend(['-preset', 'veryfast'])  # fast → veryfast で高速化
             cmd.extend(['-crf', '23'])
+            cmd.extend(['-threads', '0'])  # 全CPUコアを使用
 
         # オーディオをコピー
         cmd.extend(['-c:a', 'copy'])

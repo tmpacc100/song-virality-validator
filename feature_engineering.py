@@ -199,6 +199,22 @@ class FeatureEngineer:
         features['growth_rate'] = song_data.get('growth_rate', 0)
         features['days_since_published'] = song_data.get('days_since_published', 0)
 
+        # 相対的バズり度指標（YouTube API raw dataから）
+        features['relative_engagement_score'] = song_data.get('relative_engagement_score', 0)
+        features['relative_like_rate'] = song_data.get('relative_like_rate', 0)
+        features['relative_comment_rate'] = song_data.get('relative_comment_rate', 0)
+
+        # アナリティクスデータ（自分のチャンネルの実データ）
+        features['analytics_like_rate'] = song_data.get('analytics_like_rate', 0)
+        features['analytics_retention_rate'] = song_data.get('analytics_retention_rate', 0)
+        features['analytics_ctr'] = song_data.get('analytics_ctr', 0)
+        features['channel_organic_ratio'] = song_data.get('channel_organic_ratio', 0)  # チャンネル全体のオーガニック比率
+        features['analytics_avg_percentage_viewed'] = song_data.get('analytics_avg_percentage_viewed', 0)
+        features['analytics_engagement_rate'] = song_data.get('analytics_engagement_rate', 0)
+
+        # データソース（analytics=1, youtube_api=0）
+        features['has_analytics_data'] = 1 if song_data.get('data_source') == 'analytics' else 0
+
         # ログスケール特徴（スケール不変）
         features['log_view_count'] = np.log1p(view_count)
         features['log_like_count'] = np.log1p(like_count)

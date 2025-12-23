@@ -8,6 +8,7 @@ import csv
 import json
 import os
 import shutil
+import time
 from batch_video_generator_layers import LayerBasedBatchVideoGenerator
 
 class ColorRotationBatchGenerator:
@@ -98,6 +99,9 @@ class ColorRotationBatchGenerator:
 
         generated_videos = []
         color_index = 0
+        start_time = time.time()
+        success_count = 0
+        error_count = 0
 
         for i, row in enumerate(rows, 1):
             # 曲情報を取得（複数のCSV形式に対応）
@@ -169,11 +173,14 @@ class ColorRotationBatchGenerator:
                         'color': color,
                         'song_id': song_id
                     })
+                    success_count += 1
                     print(f"  ✓ 生成完了: {video_path}")
                 else:
+                    error_count += 1
                     print(f"  ✗ 生成失敗")
 
             except Exception as e:
+                error_count += 1
                 print(f"  ✗ エラー: {e}")
                 import traceback
                 traceback.print_exc()
@@ -181,11 +188,19 @@ class ColorRotationBatchGenerator:
         # 元のテンプレートを復元
         self._restore_original_template()
 
+        # 処理時間を計算
+        end_time = time.time()
+        total_time = end_time - start_time
+        avg_time = total_time / len(rows) if len(rows) > 0 else 0
+
         # 結果サマリー
         print(f"\n{'='*70}")
         print(f"生成完了")
         print(f"{'='*70}")
-        print(f"成功: {len(generated_videos)}/{len(rows)}")
+        print(f"成功: {success_count}/{len(rows)}")
+        print(f"失敗: {error_count}/{len(rows)}")
+        print(f"総処理時間: {total_time:.1f}秒 ({total_time/60:.1f}分)")
+        print(f"平均処理時間: {avg_time:.1f}秒/曲")
 
         if generated_videos:
             print(f"\n生成された動画:")

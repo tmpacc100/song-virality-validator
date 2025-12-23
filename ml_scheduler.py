@@ -9,6 +9,8 @@ from typing import Dict, List, Tuple, Any
 import datetime
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.multioutput import MultiOutputRegressor
 import joblib
 
 try:
@@ -18,7 +20,7 @@ try:
     TF_AVAILABLE = True
 except ImportError:
     TF_AVAILABLE = False
-    print("警告: TensorFlowが利用できません。pip install tensorflow>=2.13.0 を実行してください。")
+    print("警告: TensorFlowが利用できません。scikit-learnのGradientBoostingRegressorを使用します。")
 
 
 class ViewCountPredictor:
@@ -88,6 +90,71 @@ class ViewCountPredictor:
 
         return model
 
+    def _train_sklearn(self, X: pd.DataFrame, y: np.ndarray,
+                      use_augmentation: bool = True,
+                      verbose: int = 1) -> Dict[str, Any]:
+        """scikit-learnを使用してモデルを訓練
+
+        Args:
+            X: 特徴量DataFrame
+            y: ターゲット配列（視聴数）
+            use_augmentation: データ拡張を使用するか
+            verbose: 詳細度
+
+        Returns:
+            訓練履歴
+        """
+        if verbose:
+            print("\n⚠ TensorFlowが利用できないため、GradientBoostingRegressorを使用します")
+
+        # 特徴量を正規化
+        X_scaled = self.scaler.fit_transform(X.values)
+
+        # データ拡張
+        if use_augmentation and len(X_scaled) < 1000:
+            if verbose:
+                print(f"データ拡張を実行: {len(X_scaled)}サンプル → ", end='')
+            X_scaled, y = self.augment_data(X_scaled, y, augmentation_factor=5)
+            if verbose:
+                print(f"{len(X_scaled)}サンプル")
+
+        # 対数変換（視聴数）
+        y_log = np.log1p(y)
+
+        # 信頼度ラベル（高視聴数 = 高信頼）
+        y_confidence = (y > np.median(y)).astype(float)
+
+        # 2つの出力を結合
+        y_combined = np.column_stack([y_log, y_confidence])
+
+        # GradientBoostingRegressorモデルを構築
+        self.model = MultiOutputRegressor(
+            GradientBoostingRegressor(
+                n_estimators=100,
+                learning_rate=0.1,
+                max_depth=5,
+                random_state=42,
+                verbose=verbose
+            )
+        )
+
+        # 訓練
+        if verbose:
+            print(f"\n訓練開始: {len(X_scaled)}サンプル")
+
+        self.model.fit(X_scaled, y_combined)
+
+        # 簡単な評価
+        train_pred = self.model.predict(X_scaled)
+        train_mae = np.mean(np.abs(np.expm1(train_pred[:, 0]) - y))
+
+        if verbose:
+            print(f"\n訓練完了:")
+            print(f"  Training MAE: {train_mae:,.0f}")
+
+        self.history = {'train_mae': train_mae}
+        return self.history
+
     def augment_data(self, X: np.ndarray, y: np.ndarray,
                     augmentation_factor: int = 5) -> Tuple[np.ndarray, np.ndarray]:
         """データ拡張を実行
@@ -140,8 +207,9 @@ class ViewCountPredictor:
         Returns:
             訓練履歴
         """
+        # TensorFlowがない場合はscikit-learnを使用
         if not TF_AVAILABLE:
-            raise ImportError("TensorFlowがインストールされていません")
+            return self._train_sklearn(X, y, use_augmentation, verbose)
 
         # 特徴量を正規化
         X_scaled = self.scaler.fit_transform(X.values)
@@ -222,16 +290,27 @@ class ViewCountPredictor:
         # 正規化
         X_scaled = self.scaler.transform(X.values)
 
-        # 予測
-        pred_log, pred_confidence = self.model.predict(X_scaled, verbose=0)
-
-        # 対数スケールから元に戻す
-        pred_views = np.expm1(pred_log.flatten())
-        pred_confidence = pred_confidence.flatten()
+        # TensorFlowモデルかscikit-learnモデルかで分岐
+        if TF_AVAILABLE and hasattr(self.model, 'predict') and callable(getattr(self.model, 'predict')):
+            try:
+                # TensorFlowモデル
+                pred_log, pred_confidence = self.model.predict(X_scaled, verbose=0)
+                pred_views = np.expm1(pred_log.flatten())
+                pred_confidence = pred_confidence.flatten()
+            except:
+                # sklearn MultiOutputRegressor
+                predictions = self.model.predict(X_scaled)
+                pred_views = np.expm1(predictions[:, 0])
+                pred_confidence = predictions[:, 1]
+        else:
+            # sklearn MultiOutputRegressor
+            predictions = self.model.predict(X_scaled)
+            pred_views = np.expm1(predictions[:, 0])
+            pred_confidence = predictions[:, 1]
 
         return pred_views, pred_confidence
 
-    def save(self, model_path: str = 'models/view_predictor.h5',
+    def save(self, model_path: str = 'models/view_predictor.pkl',
             scaler_path: str = 'models/view_scaler.pkl'):
         """モデルを保存
 
@@ -243,13 +322,22 @@ class ViewCountPredictor:
         os.makedirs('models', exist_ok=True)
 
         if self.model:
-            self.model.save(model_path)
-            print(f"モデルを保存: {model_path}")
+            # TensorFlowモデルかscikit-learnモデルかで分岐
+            if TF_AVAILABLE and hasattr(self.model, 'save'):
+                try:
+                    self.model.save(model_path.replace('.pkl', '.h5'))
+                    print(f"モデルを保存: {model_path.replace('.pkl', '.h5')}")
+                except:
+                    joblib.dump(self.model, model_path)
+                    print(f"モデルを保存: {model_path}")
+            else:
+                joblib.dump(self.model, model_path)
+                print(f"モデルを保存: {model_path}")
 
         joblib.dump(self.scaler, scaler_path)
         print(f"スケーラーを保存: {scaler_path}")
 
-    def load(self, model_path: str = 'models/view_predictor.h5',
+    def load(self, model_path: str = 'models/view_predictor.pkl',
             scaler_path: str = 'models/view_scaler.pkl'):
         """モデルを読み込み
 
@@ -257,12 +345,21 @@ class ViewCountPredictor:
             model_path: モデルのパス
             scaler_path: スケーラーのパス
         """
-        if not TF_AVAILABLE:
-            raise ImportError("TensorFlowがインストールされていません")
+        import os
 
-        self.model = keras.models.load_model(model_path)
+        # .h5ファイルが存在する場合はTensorFlowモデルとして読み込み
+        h5_path = model_path.replace('.pkl', '.h5')
+        if TF_AVAILABLE and os.path.exists(h5_path):
+            self.model = keras.models.load_model(h5_path)
+            print(f"モデルを読み込み: {h5_path}")
+        elif os.path.exists(model_path):
+            self.model = joblib.load(model_path)
+            print(f"モデルを読み込み: {model_path}")
+        else:
+            raise FileNotFoundError(f"モデルファイルが見つかりません: {model_path}")
+
         self.scaler = joblib.load(scaler_path)
-        print(f"モデルを読み込み: {model_path}")
+        print(f"スケーラーを読み込み: {scaler_path}")
 
 
 def train_view_predictor(X: pd.DataFrame, y: np.ndarray,
@@ -304,8 +401,6 @@ def cross_validate(X: pd.DataFrame, y: np.ndarray,
     Returns:
         各分割のMAEスコアリスト
     """
-    if not TF_AVAILABLE:
-        raise ImportError("TensorFlowがインストールされていません")
 
     tscv = TimeSeriesSplit(n_splits=n_splits)
     scores = []
@@ -339,11 +434,6 @@ def main():
     print("="*60)
     print("ML視聴数予測 - テスト")
     print("="*60)
-
-    if not TF_AVAILABLE:
-        print("\nエラー: TensorFlowがインストールされていません")
-        print("実行してください: pip install tensorflow>=2.13.0")
-        return
 
     # サンプルデータ生成
     np.random.seed(42)

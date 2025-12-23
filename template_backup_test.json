@@ -1,0 +1,52 @@
+{
+  "canvas": {
+    "w": 1080,
+    "h": 1920
+  },
+  "layers_ordered": [
+    {
+      "type": "background",
+      "name": "background_1",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1920,
+      "visible": true,
+      "path": "/Users/shii/Desktop/song virality validator/MEDIA/title_back_imresizer.jpg"
+    },
+    {
+      "type": "video",
+      "name": "video_1",
+      "x": 182,
+      "y": 563,
+      "w": 716,
+      "h": 1259,
+      "visible": true,
+      "path": "/Users/shii/Desktop/song virality validator/MEDIA/base.mp4"
+    },
+    {
+      "type": "image",
+      "name": "image_1",
+      "x": -4,
+      "y": -22,
+      "w": 1090,
+      "h": 2000,
+      "visible": true,
+      "path": "/Users/shii/Desktop/song virality validator/MEDIA/スクリーンショット 2025-12-05 18.02.43.png"
+    }
+  ],
+  "text_areas": {
+    "text_1": {
+      "x": 108,
+      "y": 189,
+      "w": 862,
+      "h": 292,
+      "lines": 3,
+      "font": "fonts/NotoSansJP-Bold.ttf"
+    }
+  },
+  "fonts": {
+    "primary": "fonts/RampartOne-Regular.ttf",
+    "secondary": "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
+  }
+}
